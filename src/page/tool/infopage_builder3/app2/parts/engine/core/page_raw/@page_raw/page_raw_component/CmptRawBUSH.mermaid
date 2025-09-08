@@ -1,0 +1,30 @@
+classDiagram
+
+class CmptRawBUSH {
+   +- cmptRawSET : CmptRawSET
+
+   + addCmptRaw (cmptRaw) --> Boolean : error status
+
+   + removeCmptRawByRefId (cmptRawRefId) --> CmptRaw : removed cmptRaw
+
+   + removeCmptRaw (cmptRaw) --> Boolean: error status
+
+   + moveCmptRaw (cmptRaw, parentCmptRaw, hookName) --> Boolean : error status
+
+   + getCmptRawByRefId (cmptRawRefId) --> CmptRaw
+
+   + getAllCmptRawsInRefIdToCmptRawFormat () --> Object[String: CmptRaw]
+
+   + getCmptRawParent (cmptRaw) --> CmptRaw : parent cmptRawObject
+
+}
+
+
+
+
+%% Features..................
+- add cmptRaw
+- remove cmptRaw
+- move cmptRaw
+- get cmptRaw
+- get parent of cmptRaw

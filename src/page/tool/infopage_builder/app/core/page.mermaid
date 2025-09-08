@@ -1,0 +1,103 @@
+
+classDiagram
+   Page *-- PageGeneralInfo
+   Page *-- PageMeta
+   Page *-- TmptPool
+   Page *-- CmptPool
+   CmptPool o-- Cmpt
+   CmptPool o-- Cmpt
+   Page o-- TmptHub
+   Cmpt o-- Tmpt
+   TmptHub o-- Tmpt
+   TmptPool o-- TmptHub
+   CmptPool <-- TmptPool
+
+   class TmptHub {
+
+   }
+
+   class Page {
+      +pageType : String
+      +tmptHub : TmptHub
+      +plateformCmpt : Cmpt
+
+      +generalInfo : PageGeneralInfo
+      +meta : PageMeta
+      +tmptPool : TmptPool
+      +cmptPool : CmptPool
+
+
+      +zInit ()
+      +toGeneDict ()
+
+      -_createGeneralInfo()
+      -_createPageMeta()
+      -_createTmptPool()
+      -_createCmptPool()
+      -_FromGeneDict(tmptHub: TmptHub, geneDict: Object, plateformCmpt: Cmpt)
+   }
+
+   class PageGeneralInfo {
+      +pageName : String
+      +createdAt : Number
+      +lastUpdated: Number
+   }
+
+   class PageMeta {
+      +title: String
+   }
+
+   class TmptPool {
+      +tmptsets : Array[String]
+      +tmpthub : TmptHub
+
+      +toDict() --> Object
+      +getTmptSet(tmptSetName:String) --> TmptSet
+      +zGetTmptByRefId(refId: String) --> Tmpt
+      +zGetAllTmpts() --> Object
+   }
+
+   class CmptPool {
+      +tmptpool: TmptPool
+      +cmptRefIdToCmpt: Object
+      +backlogInAttachmentAssignment: Array
+
+      +addCmpt(cmpt: Cmpt) --> null
+      +zCreateAndAddCmpt(tmpt: Tmpt, tmptRefId: String, assignAttachment: Boolean) --> Cmpt
+      +zCreateAndAddCmptByCmptGeneDict(geneDict: Object, tmpt: Tmpt, assignAttachment: Boolean) --> Cmpt
+      +getCmptByRefId(refId: String) --> Cmpt
+      +removeCmptByRefId(refId: String) --> Cmpt
+      +getAllCmptsInRefIdToCmptFormat() --> Object
+      +setAttachmentOfBacklogCmpt() --> null
+      +setAttachmentsOfAllCmpt() --> null
+      toGeneDict() --> Object
+      -_assignAttachmentsOfCmpt(cmpt: Cmpt) --> null
+      -_assignAttachmentsOfHook(hook: CmptHook) --> null;
+   }
+
+   class Cmpt {
+      +styleConfigDict: Object
+      +styleDeclerationDict: Object
+      tmpt: Tmpt
+      tmptRefId: String
+      tmptpool: TmptPool
+      id: String
+      refId: String
+      styleId: String
+      idLikeClassName: String
+      nickname: String
+      attachedToCmptRefId: String
+      attachedToHookName: String
+      attachedToHookAtIndex: Integer
+      attachedToCmpt: Cmpt
+      attachedToHook: CmptHook
+
+      +zInit() --> null
+      +fitInsideElmt(elmt: HtmlNode) --> null
+      toGeneDict() --> Object
+   }
+
+   class Tmpt {
+
+   }
+

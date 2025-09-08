@@ -1,0 +1,24 @@
+@body
+<h1 data-tmpt="helloworld" data-living-scopes="" data-is-isolated-scope="true">Hello World!</h1>
+@bodyend
+
+
+@bodystyle
+<style>
+    #----- {
+        color: red;
+    }
+</style>
+@bodystyleend
+
+
+@bodystyleconfig
+<script>
+    `{
+        "color" : {
+            "value": "green",
+            "possibleValue" : ["red", "black"]
+        }
+    }`
+</script>
+@bodystyleconfigend

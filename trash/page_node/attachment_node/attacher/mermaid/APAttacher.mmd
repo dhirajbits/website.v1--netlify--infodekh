@@ -1,0 +1,20 @@
+classDiagram
+
+class APAttacher__Attacher {
+   +- seed_apAttacher : PageRaw:APAttacher
+   +- attacherType : String
+   +- attachedAP : PageNode:AttachingPoint
+
+   + activate (getCmptNodeByCmptRawRefId: Function) --> null
+
+   + attach (attachingPoint: PageNode:AttachingPoint) --> Boolean : error status
+
+   + attachToAttachingPoint (attachingPoint: PageNode:AttachingPoint) --> Boolean: error status
+
+   + detach (attachingPoint: PageNode:AttachingPoint) --> Boolean: error status
+
+   + detachFromAttachingPoint (attachingPoint: PageNode:AttachingPoint) --> Boolean: error status
+
+   + resetAttachmentProps (seed=false) --> null
+   + resetAttachment(seed=false) --> null;
+}

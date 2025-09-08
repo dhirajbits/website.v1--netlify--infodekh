@@ -1,0 +1,9 @@
+classDiagram
+class PageMeta {
+   + title: String
+
+   + STATIC : fromGeneDict(geneDict: Object) --> PageMeta
+   + toGeneDict() --> Object : dict with gene data
+
+   - _assignPropsFromGeneDict(geneDict: Object) --> null
+}

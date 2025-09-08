@@ -1,0 +1,75 @@
+:root {
+
+    /* PRIMARY COLOR */
+    --_color--primary-color--light-unsaturated: #E18A56;
+    --_color--primary-color--normal-unsaturated: #DD7B40;
+    --_color--primary-color--dark-unsaturated: #DA6D2B;
+
+    --_color--primary-color--light--normal: #F08747;
+    --_color--primary-color--normal-normal: #EE772F;
+    --_color--primary-color--dark--normal: #EC6818;
+
+    --_color--primary-color--light-saturated: #FF8438;
+    --_color--primary-color--normal-saturated: #FF741F;
+    --_color--primary-color--dark-saturated: #FF741F;
+
+
+
+    /* SECONDARY COLOR */
+    --_color--secondary-color--light-unsaturated: ;
+    --_color--secondary-color--normal-unsaturated: ;
+    --_color--secondary-color--dark-unsaturated: ;
+
+    --_color--secondary-color--light--normal: ;
+    --_color--secondary-color--normal-normal: ;
+    --_color--secondary-color--dark--normal: ;
+
+    --_color--secondary-color--light-saturated: ;
+    --_color--secondary-color--normal-saturated: ;
+    --_color--secondary-color--dark-saturated: ;
+
+    
+
+    /* ACCENT COLOR */
+    --_color--accent-color--light-unsaturated: ;
+    --_color--accent-color--normal-unsaturated: ;
+    --_color--accent-color--dark-unsaturated: ;
+
+    --_color--accent-color--light--normal: ;
+    --_color--accent-color--normal-normal: ;
+    --_color--accent-color--dark--normal: ;
+
+    --_color--accent-color--light-saturated: ;
+    --_color--accent-color--normal-saturated: ;
+    --_color--accent-color--dark-saturated: ;
+
+
+
+    /* WHITE COLOR */
+    --_color--white--light-unsaturated: #FFFFFF;
+    --_color--white--normal-unsaturated: #E5E5E5;
+    --_color--white--dark-unsaturated: #CCCCCC;
+
+    --_color--white--light-normal: #FFFFFF;
+    --_color--white--normal-normal: #E8E4E2;
+    --_color--white--dark--normal: #D2CAC6;
+
+    --_color--white--light-saturated: #FCFCFC;
+    --_color--white--normal-saturated: #EBE5E1;
+    --_color--white--dark-saturated: #D6CAC2;
+
+
+
+    /* BLACK COLOR */
+    --_color--black--light-unsaturated: #4D4D4D;
+    --_color--black--normal-unsaturated: #333333;
+    --_color--black--dark-unsaturated: #1A1A1A;
+
+    --_color--black--light--normal: #4E4D4B;
+    --_color--black--normal-normal: #343332;
+    --_color--black--dark--normal: #1A1A19;
+
+    --_color--black--light-saturated: #504D49;
+    --_color--black--normal-saturated: #353331;
+    --_color--black--dark-saturated: #1B1A18;
+}

@@ -1,0 +1,14 @@
+.INFOCONTENT {
+    --__grid-gap: 1rem;
+    margin-bottom: 4rem;
+    font-size: 1.25rem;
+}
+
+
+@media (max-width: 500px) {
+    .INFOCONTENT {
+        font-size: 1.18rem;
+    }
+}
+
+

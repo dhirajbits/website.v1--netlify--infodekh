@@ -1,0 +1,167 @@
+#secondaryMainNav {
+    position: relative;
+    margin-bottom: 3rem;
+    --_WIDTH--border: 1px;
+}
+
+#secondaryMainNav ul {
+    display: flex;
+    gap: 0.8rem;
+    font-family: var(--font--secondary);
+    font-weight: 500;
+    margin-top: 2rem;
+    /* border-bottom: 2px solid white; */
+    /* padding-inline: 0.5rem; */
+    /* padding-bottom: 1rem; */
+    height: 45px;
+    /* color: var(--color--infoblogs-sec-main-nav--text); */
+    cursor: default;
+    position: relative;
+    overflow-y: hidden;
+    border-top: var(--_WIDTH--border) solid var(--COLOR--separatorLine--dark);
+    border-bottom: var(--_WIDTH--border) solid var(--COLOR--separatorLine--dark);
+    
+    margin-right:  calc(-1 * var( --padding--webpage--right));
+    /* padding-right: var(--padding--webpage--right); */
+    margin-left:  calc(-1 * var( --padding--webpage--left));
+    /* padding-left: var(--padding--webpage--left); */
+}
+
+@media (max-width: 800px) {
+    #secondaryMainNav ul {
+        gap: 0.5rem;
+        height: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    #secondaryMainNav ul {
+        gap: 0.2rem;
+        height: 40px;
+    }
+}
+
+#secondaryMainNav .secondaryMainNavOption {
+    padding-inline: 1rem;
+    /* padding-bottom: 1rem; */
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+
+#secondaryMainNav .secondaryMainNavOption:hover,
+#secondaryMainNav .secondaryMainNavOption:focus
+{
+    /* transform: scale(1.1); */
+    color: var(--COLOR--primary2);
+
+
+}
+
+#secondaryMainNav .secondaryMainNavOption:hover svg  path,
+#secondaryMainNav .secondaryMainNavOption:focus svg  path {
+    /* transform: scale(1.1); */
+    /* color: var(--color--infoblogs-sec-main-nav--text--selected); */
+    fill: var(--COLOR--primary2);
+    stroke: var(--COLOR--primary2);
+}
+
+
+#secondaryMainNav .secondaryMainNavOption:last-child:hover svg  path,
+#secondaryMainNav .secondaryMainNavOption:last-child:focus svg  path,
+#secondaryMainNav .secondaryMainNavOption:nth-last-child(3):hover svg  path,
+#secondaryMainNav .secondaryMainNavOption:nth-last-child(3):focus svg  path,
+#secondaryMainNav .secondaryMainNavOption:nth-last-child(5):hover svg  path,
+#secondaryMainNav .secondaryMainNavOption:nth-last-child(5):focus svg  path{
+    fill: none;
+}
+
+@media (hover: none) {
+    #secondaryMainNav .secondaryMainNavOption:hover,
+    #secondaryMainNav .secondaryMainNavOption:focus {
+        transform: none;
+    }
+}
+
+
+#secondaryMainNav .secondaryMainNavOption.selected {
+    color: var(--COLOR--primary2);
+    position: relative;
+    transform: scale(1.1) !important;
+
+    /* height: 50px; */
+}
+
+#secondaryMainNav .secondaryMainNavOption.selected svg path{
+    fill: var(--COLOR--primary2);
+    stroke: var(--COLOR--primary2);
+}
+
+
+#secondaryMainNav .secondaryMainNavOption.selected:last-child svg  path,
+#secondaryMainNav .secondaryMainNavOption.selected:last-child svg  path,
+#secondaryMainNav .secondaryMainNavOption.selected:nth-last-child(3) svg  path,
+#secondaryMainNav .secondaryMainNavOption.selected:nth-last-child(3) svg  path,
+#secondaryMainNav .secondaryMainNavOption.selected:nth-last-child(5) svg  path,
+#secondaryMainNav .secondaryMainNavOption.selected:nth-last-child(5) svg  path{
+    fill: none;
+}
+
+
+#secondaryMainNav .secondaryMainNavOption.selected:hover,
+#secondaryMainNav .secondaryMainNavOption.selected:focus {
+    /* transform: none; */
+}
+
+@media (hover: none) {
+    #secondaryMainNav .secondaryMainNavOption.selected:hover,
+    #secondaryMainNav .secondaryMainNavOption.selected:focus {
+        transform: none;
+    }
+}
+
+#secondaryMainNav .secondaryMainNavOptionSeparator {
+    width: var(--_WIDTH--border);
+    height: 100%;
+    border-top: 8px solid var(--COLOR--separatorLine--dark);
+    border-bottom: 8px solid var(--COLOR--separatorLine--dark);
+    flex-shrink: 0;
+}
+/* 
+#secondaryMainNav .secondaryMainNavOption.selected::after {
+    content: ' ';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--color--infoblogs-sec-main-nav--text--selected);
+    display: block;
+    position: absolute;
+    top: 32px;
+    left: 35%; 
+    
+
+} */
+
+
+/* #secondaryMainNav .navTrackingCircle {
+    width: 20px;
+    height: 20px;
+    background-color: var(--color--infoblogs-sec-main-nav--text--selected);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -0.6rem;
+    left: 1.7rem;
+    z-index: 1;
+} */
+/* 
+#secondaryMainNav .line {
+    position: absolute;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.275);
+    top: 41px;
+    width: 100%;
+    border-radius: 20px;
+
+} */

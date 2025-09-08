@@ -1,0 +1,64 @@
+@import "./fundamental_variable/color.css";
+
+:root {
+    /* BODY */
+    --color--body-bg: #06090F;
+    --color--body-bg--gradient1: var(--_color--black--normal-normal);
+    --color--body-bg--gradient2: var(--_color--black--normal-normal);
+
+
+    /* WEBPAGE */
+    --color--webpage-bg: #080B12;
+    --color--webpage-border: rgba(255, 255, 255, 0.082);
+    
+
+    
+    /* TEXT */  
+    --color--heading-text: var(--_color--white--normal-normal);
+    --color--text: var(--_color--white--light-normal);
+    --color--text: #000;
+    --color--muted-text: var(--_color--white--dark-normal);
+
+
+    /* SEPARATOR LINE */
+    --color--separator-line: var(--_color--black--light-unsaturated);
+
+
+    /* BUTTON 1 */
+    --color--btn1-bg: var(--_color--primary-color--normal-normal);
+    --color--btn1-text: var(--_color--white--normal-normal);
+
+
+    /* NAVBAR */
+    --color--navbar-text: var(--_color--white--normal-normal);
+    --color--navbar-text--selected: var(--_color--primary-color--normal-saturated);
+    --color--navbar-bg--selected: #49321D;
+    
+
+    
+    /* NAV SIDEBAR (on mobile) */
+    --color--nav-sidebar--text: var(--_color--white--normal-normal);
+    --color--nav-sidebar--text--selected: var(--_color--primary-color--normal-saturated);
+    
+    --color--nav-sidebar-bg: ;
+    --color--nav-sidebar-bg--selected: ;
+
+    --color--nav-sidebar--separator-line: #424242;
+
+
+
+    /* INFOBLOGS SECONDARY MAIN NAVBAR */
+    --color--infoblogs-sec-main-nav--text: var(--color--white--normal-normal);
+    --color--infoblogs-sec-main-nav--text--selected: var(--_color--primary-color--normal-saturated);
+
+    /* INFOBLOGS SECONDARY(sec) CATEGORY-NAVBAR */
+    --color--infoblog-sec-category-nav--text: var(--color--white--normal-normal);
+    --color--infoblog-sec-category-nav--bg: #424242;
+    --color--infoblog-sec-category-nav--text--selected: var(--_color--primary-color--normal-saturated);
+    --color--infoblog-sec-category-nav--bg--selected: #49321D;
+
+
+    /* POST LIST BACKGROUND COLOR */
+    --gcolor--postlist-bg: linear-gradient(to bottom right, #313131, #191919);
+
+}

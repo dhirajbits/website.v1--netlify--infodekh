@@ -1,0 +1,23 @@
+.IC--Secn-content-details {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: var(--__grid-gap, 1rem);
+    grid-template-areas: 
+    "front front front front front front front front aside aside aside aside"
+    ;
+}
+
+.IC--Secn-content-details--heading {
+    color: var(--COLOR--secondary2--dark, yellow);
+    margin-bottom: 1.5rem;
+}
+
+
+@media (max-width: 850px) {
+    .IC--Secn-content-details {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas: 
+        "front front front front front aside aside aside"
+        ;
+    }
+}

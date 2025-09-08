@@ -1,0 +1,5 @@
+.IC--front {
+    grid-area: front;
+    /* padding-block: 1.5em; */
+    padding-right: 1rem;
+}

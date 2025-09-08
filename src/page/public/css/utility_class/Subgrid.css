@@ -1,0 +1,41 @@
+.Subgrid {
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+
+.Subgrid1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: subgrid;
+}
+
+.Subgrid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: subgrid;
+}
+
+.Subgrid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: subgrid;
+}
+
+.Subgrid4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: subgrid;
+}
+
+.Subgrid5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: subgrid;
+}
+
+.Subgrid6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: subgrid;
+}

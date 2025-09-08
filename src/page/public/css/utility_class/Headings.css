@@ -1,0 +1,95 @@
+.Heading1 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.Heading2 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.Heading3 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.Heading4 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.Heading5 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+
+.ThinHeading1 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.ThinHeading2 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+.ThinHeading3 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+.ThinHeading4 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.ThinHeading5 {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.ThinHeading1--M {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 0.8em;
+}
+
+.ThinHeading2--M {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-bottom: 0.6em;
+}
+
+.ThinHeading3--M {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin-bottom: 0.6em;
+}
+
+.ThinHeading4--M {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-bottom: 0.4em;
+}
+
+.ThinHeading5--M {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 0.4em;
+}

@@ -1,0 +1,21 @@
+.GridColSpan2 {
+    grid-column: span 2;
+}
+
+.GridColSpan3 {
+    grid-column: span 3;
+}
+
+.GridColSpan4 {
+    grid-column: span 4;
+}
+
+.GridColSpan5 {
+    grid-column: span 5;
+}
+
+.GridColSpan6 {
+    grid-column: span 6;
+}
+
+

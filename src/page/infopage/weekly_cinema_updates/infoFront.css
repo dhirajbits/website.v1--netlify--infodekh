@@ -1,0 +1,27 @@
+#infoFront .subArticle1.coolie .description {
+    align-items: center;
+    row-gap: 0;
+    display: block;
+}
+
+#infoFront .coolie .coolieActorImage img {
+    /* display: flex;
+    justify-content: end;
+    height: 400px;
+    margin-top: -4rem; */
+    display: block;
+    float: right;
+    height: 350px;
+    margin-top: -5rem;
+    -webkit-shape-outside: url("./asset/image/coolie-2--nobg.png");
+    shape-outside: url("./asset/image/coolie-2--nobg.png");
+    -webkit-shape-margin: 2rem;
+    shape-margin: 2rem;
+}
+
+
+/* #infoFron .subArticle1.coolie .coolieActorImage img{
+    display: flex;
+    flex-direction: flex-end;
+} */
+

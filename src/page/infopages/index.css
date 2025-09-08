@@ -1,0 +1,21 @@
+/* Setup */
+@import "../public/css/initial_setup/_all.css";
+@import "../public/css/variable/_all.css";
+
+
+/* Utility classes */
+@import "../public/css/utility_class/_all.css";
+
+/* Custom CSS */
+@import "../public/component/body/body.css";
+@import "../public/component/webpage/webpage.css";
+@import "../public/component/navbar/navbar.css";
+@import "../public/component/bodycover/bodycover.css";
+@import "./main.css";
+@import "./secondaryMainNav.css";
+@import "./secondaryCategoryNav.css";
+@import "./_PostListDisplay.css";
+@import "./_Slider.css";
+@import "./instagramPostListDisplay.css";
+@import "./xPostListDisplay.css";
+@import "../public/component/footer/footer.css";

@@ -1,0 +1,48 @@
+@body
+<div data-tmpt="main_heading">
+    <h1 class="Heading1" data-hook="title" data-hook-type="data">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+    </h1>
+    <div class="image" data-hook="image" data-hook-type="html"></div>
+    <div class="main-sub-article" data-hook="main-sub-article" data-hook-type="cmpt"></div>
+    <div class="subarticles" data-hook="subarticles" data-hook-type="cmptlist"></div>
+</div>
+@bodyend
+
+@bodystyle
+<style>
+    #----- {
+        width: 100%;
+        
+        font-family: "Maven Pro", "Quicksand", sans-serif;
+        margin-bottom: 2rem;
+        letter-spacing: -1px;
+    }
+
+    #----- > h1 {
+        background-image: linear-gradient(to right, var(--COLOR--accent2), var(--COLOR--secondary));
+        background-clip: text;
+        color: transparent;
+        font-size: 2.8rem;
+    }
+
+    #----- > .image {
+        width: 100%;
+        height: 200px;
+        background-color: red;
+        color: black;
+    }
+
+    #----- > .main-sub-article {
+        width: 100%;
+        height: 200px;
+        background-color: green;
+    }
+
+    #----- > .subarticles {
+        width: 100%;
+        height: 400px;
+        background-color: blue;
+    }
+</style>
+@bodystyleend

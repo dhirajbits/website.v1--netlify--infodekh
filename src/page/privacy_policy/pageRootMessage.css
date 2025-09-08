@@ -1,0 +1,19 @@
+#pageRootMessage p {
+    margin-block: 2rem;
+}
+
+
+#pageRootMessage a {
+    /* text-decoration: none; */
+
+    color: inherit;
+}
+
+#pageRootMessage a::before {
+    content: "\1F517";
+}
+
+#pageRootMessage ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}

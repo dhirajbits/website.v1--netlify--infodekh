@@ -1,0 +1,30 @@
+classDiagram
+class CmptHookAttachment {
+   [-|-] cmpt : Cmpt
+   [-|-] cmptHook : CmptHook : hook of cmpt
+   [+|-] hookType : String : cmpt/data/html/cmptlist
+   [+|-] isAttached : Boolean : shows attaching status
+   
+   [+|-] attachedToCmptNode : CmptNode
+   [+|-] attachedToText : String
+   [+|-] attachedToHtml : String
+   [+|-] attachedToCmptNodeList : Array[CmptNode]
+
+
+   + attachTo (value: Cmpt/String) --> Boolean : error status
+   
+   + attachToCmptNode (cmptNode: CmptNode) --> Boolean : error status
+
+   + attachToText (text: String) --> Boolean : error status
+
+   + attachToHtml (html: String) --> Boolean : error status
+
+
+   + detachFrom (value: Cmpt/String) --> Boolean : error status
+
+   + detachFromCmptNode (cmptNode: CmptNode) --> Boolean : error status
+
+   + detachFromText (text: String) --> Boolean : error status
+
+   + detachFromHtml (text: String) --> Boolean : error status
+}

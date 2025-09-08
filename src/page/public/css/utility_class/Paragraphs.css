@@ -1,0 +1,43 @@
+.Paragraph {
+    font-family: "Quicksand", sans-serif;
+    color: var(--COLOR--text);
+}
+
+
+.ArticleParagraph{
+    font-family: "Quicksand", sans-serif;
+    line-height: 1.8rem;
+    color: var(--COLOR--text);
+}
+
+
+.MutedParagraph {
+    font-family: "Quicksand", sans-serif;
+    opacity: 0.8;
+    color: var(--COLOR--text);
+}
+
+.MutedArticleParagraph {
+    font-family: "Quicksand", sans-serif;
+    opacity: 0.8;
+    line-height: 1.6rem;
+    letter-spacing: 2%;
+    color: var(--COLOR--text);
+}
+
+.SmallParagraph {
+    font-family: "Quicksand", sans-serif;
+    color: var(--COLOR--text);
+    font-size: 0.8rem;
+}
+
+.SmallArticleParagraph {
+    font-family: "Quicksand", sans-serif;
+    line-height: 1.3rem;
+    letter-spacing: 2%;
+    color: var(--COLOR--text);
+    font-size: 0.8rem;
+}
+
+
+

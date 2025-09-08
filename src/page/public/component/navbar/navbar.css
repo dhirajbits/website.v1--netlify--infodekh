@@ -1,0 +1,138 @@
+@import "./sidebar.css";
+
+
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+    /* height: 50px; */
+    cursor: default;
+}
+
+#navbar .infodekhLogo {
+    cursor: pointer;
+}
+
+
+#navbar .navOptions {
+    display: flex;
+    gap: 0.5rem;
+    /* flex-flow: end; */
+    align-items: center;
+}
+
+
+#navbar .navOptions .infoblogsNavOption {
+    background-color: rgba(255, 255, 255, 0.099);
+    height: 50px;
+    text-align: center;
+    padding: 0 0.6rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-family: var(--font--secondary);
+}
+
+#navbar .navOptions .infoblogsNavOption.selected {
+    color: var(--color--navbar-text--selected);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.251);
+    background-color: var(--color--navbar-bg--selected)
+    /* opacity: 0.2; */
+}
+
+
+#navbar .navOptions .primaryNavOptions {
+    height: 50px;
+    margin-right:  calc(-1 * var( --padding--webpage--right));
+    padding-right: var(--padding--webpage--right);
+    padding-left: 1rem;
+    background-color: rgba(255, 255, 255, 0.099);
+    display: flex;
+    align-items: center;
+    /* gap: 1rem; */
+
+}
+
+#navbar .navOptions .primaryNavOptions .navOption {
+    height: 100%;
+    padding-inline: 0.4rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    transition: all 200ms ease;
+}
+
+#navbar .navOptions .primaryNavOptions .navOption a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#navbar .navOptions .primaryNavOptions .navOption.selected {
+    background-color: var(--color--navbar-bg--selected);
+    color: var(--color--navbar-text--selected);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.516);
+    font-weight: bolder;
+}
+
+#navbar .navOptions .primaryNavOptions .navOption:hover,
+#navbar .navOptions .primaryNavOptions .navOption:focus {
+    color: var(--color--navbar-text--selected);
+}
+
+@media (hover: none) {
+    #navbar .navOptions .primaryNavOptions .navOption:hover,
+    #navbar .navOptions .primaryNavOptions .navOption:focus {
+        color: var(--color--navbar-text);
+}
+}
+
+#navbar .navOptions .primaryNavOptions .navMenuBtn {
+    padding-left: 2.2rem !important;
+    /* padding-right: 0 !important; */
+    margin-right:  calc(-1 * var( --padding--webpage--right));
+    padding-right: var(--padding--webpage--right) !important;
+}
+
+
+@media (max-width: 480px) {
+    #navbar .navOptions .infoblogsNavOption,
+    #navbar .navOptions .primaryNavOptions {
+        height: 40px;
+        margin-bottom: 0rem;
+    }
+
+    #navbar {
+        margin-bottom: 2.5rem;
+    }
+
+    #navbar .navOptions .primaryNavOptions .navMenuBtn {
+        padding-left: 0.5rem !important;
+    }
+}
+
+@media (max-width: 670px) {
+    #navbar .navOptions .primaryNavOptions .navOption:nth-child(2){
+        display: none !important;
+        background-color: white;;
+    }
+}
+
+
+@media (min-width: 700px) {
+    #navbar .navOptions .primaryNavOptions .navOption {
+        padding-inline: 0.8rem
+    }
+}
+
+
+@media (min-width: 760px) {
+    #navbar .navOptions .primaryNavOptions .navOption {
+        padding-inline: 1.2rem
+    }
+}
+

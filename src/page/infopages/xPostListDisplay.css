@@ -1,0 +1,12 @@
+#xPostListDisplay {
+    background-color: rgba(255, 255, 255, 0.083);
+    background: linear-gradient(to bottom right, var(--COLOR--webpageShadedArea--gradientColor1), var(--COLOR--webpageShadedArea--gradientColor2));
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    margin-left: calc(-1* var(--padding--webpage--left));
+    padding-left: var(--padding--webpage--left);
+    margin-right: calc(-1 * var(--padding--webpage--right));
+    padding-right: var(--padding--webpage--right);
+}

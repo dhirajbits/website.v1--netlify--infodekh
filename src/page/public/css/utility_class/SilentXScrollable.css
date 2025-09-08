@@ -1,0 +1,11 @@
+.SilentXScrollable {
+    overflow-x: auto;
+    scrollbar-width: none;
+    overscroll-behavior-inline: contain;
+    
+}
+
+.SilentXScrollable::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}

@@ -1,0 +1,9 @@
+classDiagram
+class CmptAttacher {
+   [-|-] cmpt : Cmpt
+   [+|+] isAttached : Boolean : shows attached status
+   [+|+] attachedAtCmpt : Cmpt
+   [+|+] attachedAtHook : CmptHook
+   [+|+] attachedAtIndex : Number : equal to Cmpt.attacher.attachedAtIndex
+
+}

@@ -1,0 +1,48 @@
+#aside .contactForQuery .userInput {
+    width: 100%;
+    background-color: var(--color--webpage-bg);
+    border: 3px solid grey;
+    margin-top: 1rem;
+    padding: 0.7em  1rem;
+    font: inherit;
+    color: inherit;
+    border-radius: 4px;
+}
+
+#aside .contactForQuery .userInput:active,
+#aside .contactForQuery .userInput:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.898);;
+    /* background-color: var(--color--webpage-bg); */
+}
+
+#aside .contactForQuery button {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+#aside .contactForQuery textarea {
+    height: 100px;
+}
+
+#aside .companySocials {
+    margin-top: 2rem;
+    border-top: 2px solid var(--color--separator-line);
+    padding-top: 1.5rem;
+}
+
+#aside .companySocials .heading {
+    margin-bottom: 1rem;
+}
+
+#aside .companySocials .socialsWrapper {
+    display: grid;
+    /* grid-auto-flow: column; */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    align-items: center
+}
+
+#aside .companySocials .socialsWrapper .social {
+    cursor: pointer;
+}

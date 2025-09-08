@@ -1,0 +1,12 @@
+classDiagram
+class APAttacher__Attacher{
+   +- attachedAPLocCmptRawRefId : String : AttachingPoint.location.cmptRawRefId
+   
+   + STATIC: fromGeneDict (geneDict, attachingPointLocationRaw) --> APAttacherObject
+
+   + attach (attachingPoint : AttachingPoint) --> Boolean : error status
+
+   + attachToAttachingPoint (attachingPoint: AttachingPoint) --> Boolean : error status
+
+   + toGeneDict () --> Object : geneDict of APAttacher Object
+}

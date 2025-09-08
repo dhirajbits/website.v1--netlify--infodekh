@@ -1,0 +1,44 @@
+classDiagram
+
+class TmptSET {
+   +- tmptSetNames : Array[String]
+   +- tmptHub : TmptHub
+   
+
+   + getAllAvaiableTmptNames () --> Object[String: String] --> tmptRefIdToTmptName
+
+
+
+   + getTmptDetailsByTmptRefId (tmptRefId: String) --> Object[String : String] --> object with details field and value
+   
+   + getAllAvailableTmptDetails () --> Object[String: Object[String: String]] --> object with tmptRefId and tmpt-details
+
+
+
+   + getTmptByRefId (tmptRefId: String) --> Tmpt
+
+   + getAllAvailableTmpts () --> Object[String: Tmpt] --> returns tmptRefIdToTmpt
+   
+
+
+   + toGeneDict () --> Object : geneDict
+   + STATIC : fromGeneDict (geneDict: Object, tmptHub: TmptHub) --> TmptSETObject
+
+
+}
+
+
+
+%% Features...................................
+%% - construct with tmptsetName list and tmpthub
+%% - get tmpt by refId
+%% - geneablility
+%% - get all tmpt names in list format
+%% - get all available tmpt in dict format
+%% - get details of specific tmpt by tmpt ref id
+%%    -- tmpt ref id
+%%    -- tmpt set name
+%%    -- tmpt group name
+%%    -- tmpt name
+
+%% - get tmpt-details of all tmpt in dict format

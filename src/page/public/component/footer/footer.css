@@ -1,0 +1,354 @@
+#footer {
+    margin-inline: calc(-1 * var(--padding--webpage--left));
+    /* padding-inline: var(--padding--webpage--left); */
+
+    background-color: rgba(255, 255, 255, 0.1);
+    /* background-color: var(--COLOR--primary2--dark); */
+    /* background-color: var(--COLOR----dark); */
+    border-top: 2px solid var(--COLOR--separatorLine);
+    /* color: black; */
+    padding-top: 4rem;
+}
+
+
+#footer .upperBox {
+    padding-inline: var(--padding--webpage--left);
+    display: grid;
+    grid-template-columns: 1.6fr repeat(4, 1fr);
+    grid-template-areas:
+        "primaryBox companyLinksBox forCreatorLinksBox infopagesLinksBox unhappyLinksBox"
+        "companySocials companySocials companySocials companySocials companySocials"
+    ;
+
+}
+
+
+#footer .linksBox .linkListHeading{
+    font-family: "Quicksand", system-ui, sans-serif;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+#footer .linksBox .linkList li {
+    padding-block: 0.6rem;
+
+}
+
+
+#footer .primaryBox {
+    grid-area: primaryBox;
+}
+
+#footer .primaryBox .companyLogo {
+    margin-bottom: 1.5rem;
+    margin-top: -10px;
+}
+
+
+#footer .primaryBox  .userInput {
+    display: block;
+    border: 3px solid rgba(255, 255, 255, 0.571);
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    width: 200px;
+}
+
+#footer .primaryBox textarea.userInput {
+    height: 100px;
+}
+
+#footer .primaryBox button {
+    margin-top: 0.1rem;
+    width: 200px;
+}
+
+#footer .primaryBox  .userInput:focus,
+#footer .primaryBox  .userInput:active {
+    outline: none;
+        border: 3px solid rgb(255, 255, 255);
+
+}
+
+
+#footer .companyLinksBox {
+    grid-area: companyLinksBox;
+}
+
+
+#footer .forCreatorLinksBox {
+    grid-area: forCreatorLinksBox;
+}
+
+
+#footer .infopagesLinksBox {
+    grid-area: infopagesLinksBox;
+}
+
+
+#footer .unhappyLinksBox {
+    grid-area: unhappyLinksBox;
+}
+
+#footer .upperBox .contactEmail {
+    grid-area: contactEmail;
+    justify-self: center;
+    margin-top: 1rem;
+    font-weight: 400;
+    display: none;
+}
+
+
+#footer .upperBox .flemingoColored {
+    background: var(--COLOR--flemingo--shade1);
+    background-image: linear-gradient(to right, var(--COLOR--flemingo--shade1), var(--COLOR--accent2));
+    color: transparent;
+    background-clip: text;
+}
+
+#footer .upperBox .orangedColored {
+    background: var(--COLOR--primary2);
+    background-image: linear-gradient(to right, var(--COLOR--secondary2), var(--COLOR--primary2--dark));
+    color: transparent;
+    background-clip: text;
+}
+
+#footer .companySocials {
+    grid-area: companySocials;
+    margin-inline: auto;
+    margin-top: 4rem;
+}
+
+#footer .companySocials .message {
+    opacity: 0.8;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#footer .companySocials .socialLinkList {
+    display: flex;
+    gap: 2rem;
+}
+
+#footer .companySocials .socialLinkList .socialLink {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 480px) {
+    #footer .companySocials .socialLinkList {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 430px) {
+    #footer .companySocials .socialLinkList {
+        gap: 1rem;
+    }
+}
+
+
+
+
+/* FOOTER LOWER BOX */  
+#footer .lowerBox {
+    padding-inline: var(--padding--webpage--left);
+
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid var(--COLOR--separatorLine);
+    margin-top: 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+
+#footer .lowerBox .contactEmail {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-35%)
+}
+
+#footer .lowerBox .contactEmail::before{
+    --__email-icon-width: 25px;
+    --__email-icon-height: 25px;
+    /* content: url("../../asset/icon/email-icon--light.svg"); */
+    content: " ";
+    background-image: url("../../asset/icon/email-icon--light.svg");
+    background-size: var(--__email-icon-width) var(--__email-icon-height);
+    background-repeat: no-repeat;
+    display: inline-block;
+    /* max-width: 20px;
+    max-height: 30px; */
+    width: var(--__email-icon-width);
+    height: var(--__email-icon-height);
+    position: absolute;
+    left: calc(-5px - var(--__email-icon-width) );
+    top: -1px;
+    
+}
+
+#footer .lowerBox .footerLowerBoxLinks .linkList {
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+@media (max-width: 970px) {
+    #footer .lowerBox .contactEmail {
+        position: static;
+        transform: translateX(8%);
+    }
+}
+
+
+@media (max-width: 940px) {
+    #footer .upperBox {
+        grid-template-columns: 1.6fr repeat(3, 1fr);
+        grid-template-areas:
+            "primaryBox companyLinksBox forCreatorLinksBox  unhappyLinksBox"
+            "companySocials companySocials companySocials  companySocials"
+        ;
+    }
+
+    #footer .upperBox .infopagesLinksBox{
+        display: none;
+    }
+}
+
+
+@media (max-width: 850px) {
+    #footer .lowerBox .contactEmail {
+        display: none;
+    }
+
+    #footer .upperBox .contactEmail {
+        display: block;
+    }
+
+    #footer .upperBox {
+        grid-template-areas:
+            "primaryBox companyLinksBox forCreatorLinksBox  unhappyLinksBox"
+            "companySocials companySocials companySocials  companySocials"
+            "contactEmail contactEmail contactEmail contactEmail"
+        ;
+    }
+
+    
+}
+
+@media (max-width: 790px) {
+    #footer .upperBox .primaryBox .contactForQuery {
+        display: none;
+    }
+
+    #footer .upperBox {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "primaryBox companySocials companySocials companySocials"
+            " companyLinksBox forCreatorLinksBox  infopagesLinksBox unhappyLinksBox"
+            "contactEmail contactEmail contactEmail contactEmail"
+        ;
+        align-content: center;
+    }
+
+    #footer .upperBox .infopagesLinksBox{
+        display: block;
+    }
+
+    #footer .upperBox .companySocials {
+        margin: 0;
+        justify-self: end;
+        position: relative;
+    }
+
+    #footer .upperBox .companySocials .message {
+        position: absolute;
+        top: -35px;
+        right: 0;
+        opacity: 0.4;
+    }
+
+    #footer .upperBox .contactEmail {
+        font-weight: 700;
+        border-block: 1px solid var(--COLOR--separatorLine--dark);
+        padding-block: 0.2rem;
+    }
+
+
+    #footer .upperBox .linksBox {
+        margin-top: 2rem;
+    }
+
+
+}
+
+
+@media (max-width: 700px) {
+    
+    #footer .upperBox {
+        grid-template-columns: 0.5fr 1fr 1fr 0.5fr 1fr 1fr ;
+        grid-template-areas:
+            "primaryBox primaryBox companySocials companySocials companySocials companySocials"
+            ". companyLinksBox companyLinksBox  . forCreatorLinksBox forCreatorLinksBox "
+            ". infopagesLinksBox infopagesLinksBox  . unhappyLinksBox unhappyLinksBox "
+            "contactEmail contactEmail contactEmail contactEmail contactEmail contactEmail"
+        ;
+        grid-row-gap: 2rem;
+        grid-column-gap: 1rem;
+    }
+
+    #footer .upperBox .linksBox {
+        margin-top: 1rem;
+    }
+
+    
+    #footer .upperBox .primaryBox .companyLogo {
+        margin-bottom: 0;
+    }
+
+}
+
+@media (max-width: 400px) {
+    /* #footer .upperBox {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "primaryBox companySocials companySocials companySocials"
+            " companyLinksBox companyLinksBox  forCreatorLinksBox forCreatorLinksBox"
+            " infopagesLinksBox infopagesLinksBox  unhappyLinksBox unhappyLinksBox"
+            "contactEmail contactEmail contactEmail contactEmail"
+        ;
+        grid-row-gap: 2rem;
+    } */
+    #footer .upperBox {
+        grid-template-columns: 0.2fr repeat(4, 1fr);
+        grid-template-areas:
+            "primaryBox primaryBox primaryBox . ."
+            ". companyLinksBox companyLinksBox  forCreatorLinksBox forCreatorLinksBox"
+            ". infopagesLinksBox infopagesLinksBox  unhappyLinksBox unhappyLinksBox"
+            " contactEmail contactEmail contactEmail contactEmail contactEmail  "
+            "companySocials companySocials companySocials companySocials companySocials"
+        ;
+        grid-row-gap: 2rem;
+        grid-column-gap: 1rem;
+    }
+
+    #footer .upperBox .companySocials {
+        justify-self: center;
+    }
+
+    #footer .companySocials .socialLinkList {
+        gap: 1.9rem;
+        margin-top: -1rem;
+    }
+
+    #footer .companySocials .message {
+        display: none;
+    }
+
+}

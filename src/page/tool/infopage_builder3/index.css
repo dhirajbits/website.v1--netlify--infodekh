@@ -1,0 +1,14 @@
+/* Setup */
+@import "../../public/css/initial_setup/_all.css";
+@import "../../public/css/variable/_all.css";
+
+
+/* Utility classes */
+@import "../../public/css/utility_class/_all.css";
+
+
+/* Custom css */
+@import "./style/variables.css";
+@import "./style/body.css";
+@import "./style/webpage.css";
+@import "./style/infopage.css";

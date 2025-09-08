@@ -1,0 +1,13 @@
+classDiagram
+
+class CmptRawSET {
+   -- cmptRawRefIdToCmptRaw : Object
+
+   + addCmptRaw (cmptRaw) --> Boolean : error status
+   
+   + removeCmptRaw (cmptRaw) --> Boolean : error status
+
+   + getCmptRawByRefId (cmptRawRefId) --> CmptRaw
+
+   + getAllCmptRawsInRefIdToCmptRawFormat () --> Object[String: CmptRaw]
+}

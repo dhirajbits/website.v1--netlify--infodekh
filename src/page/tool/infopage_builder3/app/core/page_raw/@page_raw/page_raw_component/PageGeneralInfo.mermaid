@@ -1,0 +1,11 @@
+classDiagram
+class PageGeneralInfo {
+   ++ pageName : String
+   ++ createdAt : Number : timestamp
+   ++ lastUpdatedAt : Number : timestamp
+
+   + updateLastUpdatedAt () --> Boolean : error status
+   + toGeneDict () --> Object : geneDict of PageGeneralInfo
+
+   + STATIC : fromGeneDict (geneDict: Object) --> PageGeneralInfoObject
+}

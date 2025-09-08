@@ -1,0 +1,38 @@
+#Infocontent {
+    display: grid;
+    margin-bottom: 4rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 
+    "infoHeading infoHeading infoHeading infoHeading infoHeading infoHeading"
+    "front front front front aside aside"
+    ;
+    column-gap: 1rem;
+    font-size: 1.25rem;
+}
+
+#Infocontent ._infoHeading {
+    grid-area: infoHeading;
+}
+
+#Infocontent ._front {
+    grid-area: front;
+}
+
+#Infocontent ._front ._lastUpdated {
+    font-size: 0.8rem;
+    opacity: 0.6rem;
+    font-family: monospace;
+    margin-bottom: 2rem;
+}
+
+#Infocontent ._aside {
+    grid-area: aside;
+    border-left: 1px solid var(--COLOR--separatorLine);
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    color: var(--COLOR--text--dark2)
+}
+
+#Infocontent ._SubArticle1 {
+    margin-block: 2rem;
+}

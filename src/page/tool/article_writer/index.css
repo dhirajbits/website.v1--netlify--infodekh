@@ -1,0 +1,30 @@
+/* Setup */
+@import "../../public/css/initial_setup/_all.css";
+@import "../../public/css/variable/_all.css";
+
+
+/* Utility classes */
+@import "../../public/css/utility_class/_all.css";
+@import "../../public/infocontent/css/_all.css";
+@import "../../public/infocontent/css/_all.css";
+
+
+/* Components */
+@import "../../public/component/body/body.css";
+@import "../../public/component/webpage/webpage.css";
+@import "../../public/component/navbar/navbar.css";
+@import "../../public/component/navbar/navbar.css";
+@import "../../public/component/footer/footer.css";
+@import "../../public/component/bodycover/bodycover.css";
+@import "../../public/component/bodycover/bodycover.css";
+@import "../../public/infocontent/component/Infocontent/Infocontent.css";
+@import "../../public/infocontent/component/Infocontent/Infocontent.css";
+
+
+/* SUPER PRESETS */
+@import "../../public/super_preset/infocontent/_all.css";
+
+/* Custom CSS */
+
+
+

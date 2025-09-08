@@ -1,0 +1,106 @@
+:root {
+    /* NATIVE COLOR STANDARIZATION*/
+    --COLOR--white: #fff;
+    --COLOR--black: #000;
+
+    --COLOR--flemingo: #EC4F30;
+    --COLOR--flemingo--shade1: #f86d51;
+
+    
+    /* LIGHT COLOR */
+    --COLOR--light: #DDDDDD;
+    --COLOR--light--light: hsl(0, 0%, 92%);
+    --COLOR--light--dark: hsl(0, 0%, 82%);
+    --COLOR--light--dark2: hsl(0, 1%, 70%);
+
+
+    /* DARK COLOR */
+    --COLOR--dark: hsl(0, 0%, 4%);
+    --COLOR--dark--light: hsl(0, 0%, 8%);
+    --COLOR--dark--dark: hsl(0, 0%, 0%);
+
+
+    /* PRIMARY COLOR */
+    --COLOR--primary: hsl(220, 43%, 4%);
+    --COLOR--primary--light: hsl(220, 41%, 9%);
+    --COLOR--primary--light2: hsl(220, 41%, 10%);
+    --COLOR--primary--dark: hsl(220, 43%, 3%);
+
+    --COLOR--primary--opacity50: hsla(220, 43%, 4%, 0.5);
+    --COLOR--primary--opacity80: hsla(220, 43%, 4%, 0.8);
+    --COLOR--primary--opacity90: hsla(220, 43%, 4%, 0.9);
+
+
+    --COLOR--primary2: hsl(23, 100%, 61%);
+    --COLOR--primary2--light: hsl(23, 100%, 64%);
+    --COLOR--primary2--dark: hsl(23, 100%, 58%);
+    /* --COLOR--primary2--dark: #EC4F30; */
+
+    --COLOR--primary2--opacity50: hsla(23, 100%, 61%, 0.5);
+
+
+    
+    /* SECONDARY COLOR */
+    --COLOR--secondary: hsl(203, 100%, 61%);
+    --COLOR--secondary--light: hsl(203, 100%, 61%);
+    --COLOR--secondary--dark: hsl(203, 100%, 61%);
+
+    --COLOR--secondary--opacity10: hsla(203, 100%, 61%, 0.1);
+    --COLOR--secondary--opacity30: hsla(203, 100%, 61%, 0.3);
+    --COLOR--secondary--opacity50: hsla(203, 100%, 61%, 0.5);
+
+
+    --COLOR--secondary2: hsl(41, 100%, 51%);
+    --COLOR--secondary2--light: hsl(41, 100%, 55%);
+    --COLOR--secondary2--dark: hsl(41, 100%, 47%);
+
+
+    --COLOR--secondary3: hsl(207, 42%, 52%);
+    --COLOR--secondary3--light: hsl(207, 42%, 52%);
+    --COLOR--secondary3--dark: hsl(207, 42%, 52%);
+    
+    --COLOR--secondary3--opacity10: hsla(207, 42%, 52%, 0.1);
+
+
+    /* ACCENT COLOR */
+    --COLOR--accent: hsl(163, 100%, 45%);
+    --COLOR--accent--light: hsl(163, 100%, 42%);
+    --COLOR--accent--dark: hsl(163, 100%, 48%);
+
+    --COLOR--accent--opacity90: hsla(163, 100%, 45%, 0.9);
+
+
+    --COLOR--accent2: hsl(343, 100%, 45%);
+    --COLOR--accent2--light: hsl(343, 100%, 42%);
+    --COLOR--accent2--dark: hsl(343, 100%, 48%);
+
+
+    /* TEXT COLOR */
+    --COLOR--text: var(--COLOR--light--dark);
+    --COLOR--text--light: var(--COLOR--light--light);
+    --COLOR--text--dark: var(--COLOR--light--dark);
+    --COLOR--text--dark2: var(--COLOR--light--dark2);
+
+
+    /* WEBPAGE */
+    --COLOR--body--bg: hsl(222, 38%, 5%);
+    --COLOR--webpage--bg: var(--COLOR--primary);
+    --COLOR--webpage--border: hsla(0, 0%, 100%, 0.08);
+    
+    
+    /* WEBPAGE SHADED AREA (FOCUS AREA) */
+    --COLOR--webpageShadedArea--bg: #0F1624;
+    --COLOR--webpageShadedArea--bg--dark: #0D131F;
+    --COLOR--webpageShadedArea--gradientColor1: #0F1624;
+    --COLOR--webpageShadedArea--gradientColor2: #0D131F;
+
+
+    /* SEPARATOR LINE COLOR */
+    --COLOR--separatorLine: #545454;
+    --COLOR--separatorLine--light: #7b7b7b;
+    --COLOR--separatorLine--dark: #545454;
+
+
+    --COLOR--callToAction: ;
+
+}

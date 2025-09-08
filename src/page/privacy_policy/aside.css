@@ -1,0 +1,46 @@
+#aside .helpfulPages .heading {
+    margin-bottom: 1.2rem;
+} 
+
+#aside .helpfulPages .pageLink {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(128, 128, 128, 0.382);
+    background-color: var(--COLOR--webpageShadedArea--bg--dark);
+    
+    padding-inline: 1rem;
+    margin-top: 1rem;
+}
+
+#aside .helpfulPages .pageLink:hover,
+#aside .helpfulPages .pageLink:focus {
+    filter: brightness(200%);
+}
+
+#aside .helpfulPages .pageLink a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+
+
+
+#aside .companySocials {
+    margin-top: 2rem;
+    border-top: 2px solid var(--color--separator-line);
+    padding-top: 1.5rem;
+}
+
+#aside .companySocials .heading {
+    margin-bottom: 1rem;
+}
+
+#aside .companySocials .socialsWrapper {
+    display: grid;
+    /* grid-auto-flow: column; */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    align-items: center
+}

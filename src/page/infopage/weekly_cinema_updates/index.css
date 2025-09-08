@@ -1,0 +1,33 @@
+/* Setup */
+@import "https://infodekh.com/public/css/initial_setup/_all.css";
+@import "https://infodekh.com/public/css/variable/_all.css";
+
+
+/* Utility classes */
+@import "https://infodekh.com/public/css/utility_class/_all.css";
+@import "https://infodekh.com/public/infocontent/css/_all.css";
+@import "../../public/infocontent/css/_all.css";
+
+
+/* Components */
+@import "https://infodekh.com/public/component/body/body.css";
+@import "https://infodekh.com/public/component/webpage/webpage.css";
+@import "https://infodekh.com/public/component/navbar/navbar.css";
+@import "../../public/component/navbar/navbar.css";
+@import "https://infodekh.com/public/component/footer/footer.css";
+@import "https://infodekh.com/public/component/bodycover/bodycover.css";
+@import "../../public/component/bodycover/bodycover.css";
+@import "https://infodekh.com/public/infocontent/component/Infocontent/Infocontent.css";
+@import "../../public/infocontent/component/Infocontent/Infocontent.css";
+
+
+/* SUPER PRESETS */
+@import "../../public/super_preset/infocontent/_all.css";
+
+/* Custom CSS */
+@import "./main.css";
+@import "./infoFront.css";
+@import "./infoAside.css";
+@import "./coolie.css";
+
+

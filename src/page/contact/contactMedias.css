@@ -1,0 +1,100 @@
+#contactMedias {
+    margin-top: 3rem;
+}
+
+
+#contactMedias .contactMedia {
+    margin-bottom: 4rem;
+    border-top: 2px solid grey;
+    padding-top: 4rem;
+}
+
+
+#contactMedias :nth-child(1),
+#contactMedias :nth-child(2) {
+    border: none;
+    padding-top: 0;
+}
+
+
+#contactMedias .directMessage {
+    background-color: rgba(128, 128, 128, 0.156);
+    background: linear-gradient(to bottom right, var(--COLOR--webpageShadedArea--gradientColor1), var(--COLOR--webpageShadedArea--gradientColor2));
+    margin-left: calc(-1 * var(--padding--webpage--left));
+    padding-left: var(--padding--webpage--left);
+    margin-right: calc(-1 * var(--padding--webpage--right));
+    padding-right: var(--padding--webpage--right);
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+
+}
+
+#contactMedias .directMessage .userInput{
+    width: 100%;
+    /* background-color: var(--color--webpage-bg); */
+    background-color: transparent;
+    border: 3px solid rgba(159, 159, 159, 0.753);
+    margin-top: 1rem;
+    padding: 0.7em  1rem;
+    font: inherit;
+    color: inherit;
+    border-radius: 4px;
+}
+
+#contactMedias .directMessage .userInput:focus,
+#contactMedias .directMessage .userInput:active {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.898);
+}
+
+#contactMedias .directMessage textarea {
+    height: 150px;
+}
+
+#contactMedias .directMessage button {
+    margin-top: 1.2rem;
+    width: 100%;
+}
+
+
+#contactMedias .contactMedia {
+    
+}
+
+#contactMedias .contactMedia .title {
+    margin-bottom: 2rem;
+}
+
+#contactMedias .contactMedia .message {
+    margin-bottom: 2rem;
+}
+
+#contactMedias .contactMedia button {
+    width: 100%;
+    filter: brightness(70%);
+
+}
+
+#contactMedias .contactMedia button a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    cursor: default;
+}
+
+#contactMedias .instagram.contactMedia .message{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#contactMedias .instagram.contactMedia .message .instagramProfileBadge {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.196);
+    
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,7 @@
+.IC--Secn-content {
+    line-height: 1.8em;
+}
+
+.IC--Secn-content > * {
+    padding-block: 3em;
+}

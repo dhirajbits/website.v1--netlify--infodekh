@@ -1,0 +1,19 @@
+@import "../variable/color.css";
+
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background-color: var(--body-bg-color);
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--COLOR--text);
+}
+/* 
+@media (min-width: 1200px) {
+    body {
+        background-image: url(../../asset/icon/infodekh_as_bg.svg);
+        background-position: start;
+        background-repeat: no-repeat;
+        background-size: 100% ;
+    }
+} */

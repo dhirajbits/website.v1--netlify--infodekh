@@ -1,0 +1,16 @@
+classDiagram
+class Cmpt {
+   + id : Number
+   + refId : String
+   + nickname : String
+   + idLikeClassName : String
+   + livingScopes : Array [String]
+   + isScopeIsolated : Boolean
+
+   + tmpt : Tmpt : GIVEN
+   + style: CmptStyle
+   + styleConfig: CmptStyleConfig
+   + attacher : CmptAttacher
+   + hookNameToHook : Object [String : CmptHook]
+
+}

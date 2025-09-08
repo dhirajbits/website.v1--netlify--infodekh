@@ -1,0 +1,81 @@
+classDiagram
+Page *-- PageMeta
+Page *-- PageGeneralInfo
+TmptPOOL o-- TmptHub
+Page o-- TmptHub
+Page *-- TmptPOOL
+Page *-- CmptNodeTREE
+
+
+CmptNodeTREE *-- CmptNodeSET
+CmptNodeSET o-- CmptNode
+CmptNodeSET o-- CmptNode
+
+
+
+Cmpt *--o FemaleAttacher
+Cmpt o-- Tmpt
+
+Tmpt *-- TmptStyle
+Tmpt *-- TmptStyleConfig
+Tmpt *-- TmptHook
+Tmpt *-- TmptHook
+
+Cmpt *-- CmptStyle
+Cmpt *-- CmptStyleConfig
+
+
+Cmpt *--o CmptHook
+Cmpt *--o CmptHook
+
+CmptHook <-- TmptHook
+
+CmptHook *-- CmptHookStyleConfig
+CmptHook *-- CmptHookStyle
+CmptHook *--o MaleAttacher
+
+%% CmptNode is wrapper around Cmpt
+CmptNode *--o CmptNodeAttacher
+CmptNode o-- Cmpt
+CmptNode *--o CmptNodeHook
+CmptNode *--o CmptNodeHook
+
+CmptNodeHook o-- CmptHook
+CmptNodeHook *--o CmptNodeHookAttacher
+
+
+CmptNodeAttacher o-- CmptNodeHook__2
+%% CmptNodeAttacher o-- Cmpt__2
+
+
+CmptNodeAttacher o-- FemaleAttacher
+CmptNodeHookAttacher o-- MaleAttacher
+CmptNodeHookAttacher o-- CmptNode__2
+
+FemaleAttacher o-- CmptHook__2
+MaleAttacher o-- Cmpt__2
+
+
+class TmptHub {
+   Mother = User
+}
+
+class Page {
+   Mother = App
+}
+
+class CmptNode {
+   Mother = Page
+}
+
+class Cmpt {
+   Mother = Page
+}
+
+
+class Tmpt {
+   Mother = TmptHub
+}
+
+
+

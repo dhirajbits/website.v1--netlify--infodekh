@@ -1,0 +1,30 @@
+.IC--Secn-heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: "Maven Pro", "Quicksand", sans-serif;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+    
+    background: var(--COLOR--flemingo--shade1);
+    background-image: linear-gradient(to right, var(--COLOR--accent2), var(--COLOR--secondary));
+    color: transparent;
+    background-clip: text;
+}
+
+@media (max-width: 900px) {
+    .IC--Secn-heading {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .IC--Secn-heading {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .IC--Secn-heading {
+        font-size: 1.8rem;
+    }
+}

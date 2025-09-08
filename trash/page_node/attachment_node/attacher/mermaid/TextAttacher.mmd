@@ -1,0 +1,18 @@
+classDiagram
+
+class TextAttacher__Attacher{
+   +- isActivated : Boolean
+   +- seed_textAttacher : PageRaw:TextAttacher
+   +- attacherType : String
+   +- attachedText : String
+
+   + activate () --> null
+   + attach (text: String) --> Boolean : error status
+   + attachToText (text: String) --> Boolean: error status
+
+   + detach (text: String) --> Boolean : error status
+   + detachFromText (text: String) --> Boolean: error status
+
+   + resetAttachmentProps () --> null
+   + resetAttachment () --> null
+}

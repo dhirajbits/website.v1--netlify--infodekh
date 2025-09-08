@@ -1,0 +1,13 @@
+#body {
+    background-color: var(--color--body-bg);
+    color: var(--COLOR--text);
+}
+
+
+@media (min-width: 1200px) {
+    #body {
+        background-image: url(../../asset/icon/infodekh_as_bg.svg);
+        background-repeat: no-repeat;
+        background-color: center;
+    }
+}

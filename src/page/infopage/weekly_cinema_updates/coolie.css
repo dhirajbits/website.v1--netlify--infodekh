@@ -1,0 +1,18 @@
+.coolie .coolieDescription {
+    display: flow-root;
+}
+
+
+.coolie .coolieActorImageBox {
+    float: right;
+    margin-top: -4rem;
+    -webkit-shape-outside: url('./asset/image/coolie-2--nobg.png');
+    shape-outside: url('./asset/image/coolie-2--nobg.png');
+    shape-margin: 5rem;
+}
+
+
+
+.coolie .coolieDescription > p {
+    margin-top: 1rem;
+}

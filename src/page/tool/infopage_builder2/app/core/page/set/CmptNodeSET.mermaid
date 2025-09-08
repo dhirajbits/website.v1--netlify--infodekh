@@ -1,0 +1,11 @@
+classDiagram
+class CmptNodeSET {
+   - refIdToCmptNode : Object
+
+
+   + isCmptNodeExistsInSET (cmptNode: CmptNode) --> Boolean : existance status
+   
+   + addCmptNode (cmptNode: cmptNode) --> Boolean : error status
+
+   + removeCmptNode (cmptNode: cmptNode) --> Boolean : error status
+}

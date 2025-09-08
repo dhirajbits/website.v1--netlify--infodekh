@@ -1,0 +1,29 @@
+.IC--aside {
+    grid-area: aside;
+    border: 1px solid var(--COLOR--separatorLine--dak, rgba(255, 255, 255, 0.101));
+    padding-inline: 1rem;
+    box-shadow: 
+    inset 0px 0px 2px rgba(255, 255, 255, 0.05),
+    /* inset 1px 1px 1px rgba(255, 255, 255, 0.05), */
+    /* inset -1px -1px 1px rgba(255, 255, 255, 0.05), */
+    0px 0px 10px rgba(255, 255, 255, 0.05);
+    ;
+    padding-block: 1rem;
+    border-radius: 0.5rem;
+    align-self: start;
+    font-size: 1.15rem;
+}
+
+.IC--aside.empty {
+    border: none;
+    box-shadow: none;
+    border-left: 1px solid var(--COLOR--separatorLine--dak, rgba(255, 255, 255, 0.101));
+    align-self: stretch;
+
+}
+
+@media (max-width: 500px) {
+    .IC--aside{
+        font-size: 1.05rem;
+    }
+}

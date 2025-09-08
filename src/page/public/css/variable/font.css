@@ -1,0 +1,30 @@
+@import "./fundamental_variable/font.css";
+
+:root {
+
+    --font--primary: var(--_paragraph-font);
+    --font--secondary: var(--_heading-font);
+
+    --font--heading1: var(--_heading-font);
+    --font--heading2: var(--_heading-font);
+    --font--heading3: var(--_heading-font);
+    --font--heading4: var(--_heading-font);
+    --font--heading5: var(--_heading-font);
+
+
+    --font--paragraph1: var(--_paragraph-font);
+    --font--paragraph2: var(--_paragraph-font);
+
+
+    --font--btn1: var(--_paragraph-font);
+    --font--btn2: var(--_paragraph-font);
+
+
+    --font--body: var(--_paragraph-font);
+    
+    
+    --font--nav-main: var(--_heading-font);
+    --font--nav-sub: var(--_heading-font);
+
+    --font--anchor: var(--_paragraph-font);
+}

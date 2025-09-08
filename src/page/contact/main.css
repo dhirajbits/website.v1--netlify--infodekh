@@ -1,0 +1,66 @@
+#main {
+    /* margin-top: 1rem;
+    margin-bottom: 1rem; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.2fr;
+    grid-template-areas:
+    "heading heading heading heading"
+    "content content content aside"
+    ;
+    grid-gap: 1rem;
+    grid-row-gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+#pageRootHeading {
+    grid-area: heading;
+}
+
+#content {
+    grid-area: content;
+    padding-right: calc(var(--padding--webpage--right) - 1rem);
+}
+
+#aside {
+    grid-area: aside;
+    border-left: 2px solid var(--color--separator-line);
+    padding-left: var(--padding--webpage--right);
+}
+
+@media (max-width: 768px) {
+    #main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "heading"
+        "content"
+        "aside"
+        ;
+    }
+
+    #aside {
+        border-left: none;
+        padding-left: 0;
+        border-top: 2px solid var(--color--separator-line);
+        border-bottom: 2px solid var(--color--separator-line);
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        /* margin-bottom: 3rem; */
+    }
+
+    #aside .contactForQuery {
+        max-width: 500px;
+        margin-inline: auto;
+    }
+    #aside .contactForQuery .heading{
+        margin-bottom: 1.2rem;
+    }
+
+    #aside .contactForQuery > button {
+        margin-top: 1.2rem !important;
+        /* background-color: red; */
+    }
+
+    #aside .companySocials {
+        display: none;
+    }
+}

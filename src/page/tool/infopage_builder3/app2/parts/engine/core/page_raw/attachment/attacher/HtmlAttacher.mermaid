@@ -1,0 +1,12 @@
+classDiagram
+class HtmlAttacher__Attacher {
+   +- html : String
+
+   + attach (html: String) --> Boolean : error status
+
+   + attachHtml (html: String) --> Boolean : error status
+
+   + toGeneDict () --> Object : geneDict of HtmlAttacher
+
+   + STATIC : fromGeneDict (geneDict: Object, attacherLocationRaw: AttacherLocationRaw) --> HtmlAttacherObject
+}

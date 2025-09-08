@@ -1,0 +1,10 @@
+classDiagram
+
+class NodeAttachingPointLocation {
+   +- seed_attachingPointLocationRaw : PageRaw:AttachingPointLocationRaw
+   
+   +- isActivated : Boolean : show activation state
+   ++ cmptNode : CmptNode
+
+   + activate (getCmptNodeByCmptRawRefId: Function) --> Boolean : error status 
+}

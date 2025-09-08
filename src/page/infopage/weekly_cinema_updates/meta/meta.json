@@ -1,0 +1,13 @@
+{
+    "version": "1.0.0",
+    "id": 112233,
+    "title": "Weekly Cinema Updates",
+    "description": "Stay updated with the latest cinema releases and schedules every week.",
+    "keywords": ["cinema", "movies", "weekly updates", "film releases", "showtimes"],
+    "author": "Anup Kumar",
+    "catagory1": "movies",
+    "catagory2": "youtube",
+    "isExclusive": false,
+    "isSearchable": true
+    
+}
