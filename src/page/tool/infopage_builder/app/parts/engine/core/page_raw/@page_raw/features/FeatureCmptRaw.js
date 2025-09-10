@@ -17,7 +17,6 @@ export class FeatureCmptRaw {
       } catch {
          throw new TmptNotFoundError();
       }
-
       if (!tmpt) throw new TmptNotFoundError();
 
       return new CmptRaw({

@@ -44,6 +44,10 @@ export class CmptHookDoc {
 		return this.seed_cmptHookRaw.idLikeClassName
 	}
 
+	updateAttacherHtmlDoc() {
+		this.attacher.updateHtmlDoc();
+	}
+
 	_createBodyElmt() {
 		return this.seed_cmptHookRaw.tmptHook.bodyElmt.cloneNode(
 			true

@@ -1,8 +1,8 @@
-import { articleTypeBadge } from "../../../../../../../infopage_builder/ui/component/aside/article_type_badge.js";
+
 import { UICmpt } from "../../../utility/ui_cmpt/UICmpt.js";
 import { createArticleTypeBadgeCmpt } from "./article_type_badge.js";
 
-export function createPageDetailsStripCmpt() {
+export function createPageDetailsStripCmpt({panel}) {
 	const cmpt = new UICmpt({
 		name: "pageDetailsStrip",
 		tagname: "section",
@@ -23,6 +23,7 @@ export function createPageDetailsStripCmpt() {
          padding: var(--_WIDTH--aside-padding);
          padding-block: 1rem;
          border-bottom: 2px solid var(--_COLOR--aside-strip-border);
+         overflow: hidden;
       }
 
       #----- > div > div {
@@ -74,7 +75,7 @@ export function createPageDetailsStripCmpt() {
 		type: UICmpt.HOOKTYPE.CMPT,
 	});
 
-	const pageNameChangeHndr = () => {
+	const pageNameChangeHndr = ({panel}) => {
 		const hook = cmpt.hook("pageName");
 		const pageName = hook.bodyElmt.textContent;
 
@@ -94,14 +95,21 @@ export function createPageDetailsStripCmpt() {
 		hook.bodyElmt.querySelector("input").onkeydown = (event) => {
 			if (event.key === "Enter") {
 				event.preventDefault();
-				hook.attach(hook.bodyElmt.querySelector("input").value.trim());
-            hook.uiCmpt.css = "#----- .pagename {padding-top: 0.1rem;}"
+            const pageName = hook.bodyElmt.querySelector("input").value.trim();
+				hook.attach(pageName);
+            hook.uiCmpt.css = "#----- .pagename {padding-top: 0.1rem;}";
+            panel.Page.set__pageName({pageName});
+            panel.Page.mtd__savePageToLocalStorage();
 			}
-			hook.bodyElmt.onclick = pageNameChangeHndr;
+			hook.bodyElmt.onclick = () => {
+            pageNameChangeHndr({panel});
+         };
 		};
 	};
 
-	cmpt.hook("pageName").bodyElmt.onclick = pageNameChangeHndr;
+	cmpt.hook("pageName").bodyElmt.onclick = () => {
+      pageNameChangeHndr({panel});
+   };
 
    const articleTypeBadgeCmpt = createArticleTypeBadgeCmpt();
    cmpt.hook("articleTypeBadge").attach(articleTypeBadgeCmpt)

@@ -9,7 +9,7 @@ export class APAttacher extends DocAttacher {
 		});
 
       this.seed_apAttacher = seed_attacher
-      this._updateHtmlDoc();
+      // this.updateHtmlDoc();
 	}
 
    get attachedAP() {
@@ -24,7 +24,7 @@ export class APAttacher extends DocAttacher {
       if (error) return;
 
       // Updating htmlDoc
-      this._updateHtmlDoc();
+      this.updateHtmlDoc();
    }
 
    detach(attachingPoint) {
@@ -33,7 +33,7 @@ export class APAttacher extends DocAttacher {
       if (error) return;
 
       // Updating htmlDoc
-      this._updateHtmlDoc();
+      this.updateHtmlDoc();
    }
 
    detachFromAny() {
@@ -41,10 +41,10 @@ export class APAttacher extends DocAttacher {
       const error = this.seed_apAttacher.detachFromAny();
 
       // Update htmlDoc
-      this._updateHtmlDoc();
+      this.updateHtmlDoc();
    }
    
-   _updateHtmlDoc() {
+   updateHtmlDoc() {
       this.location.cmptHookDoc.bodyElmt.innerHTML = "";
       
       if (this.attachedAP) {

@@ -33,7 +33,7 @@ export class RawAttachingPoint extends RawRelationalUnit {
 
       this.location = location; //RawAttachingPointLocation
       this.attachedAttacherRefId = null; //String
-      this.attachedAtIndex = 0; //Integer
+      this.attachedAtIndex = null; //Integer
 
 
       // ASSIGNING PROPERTY (FROM GENEDICT)

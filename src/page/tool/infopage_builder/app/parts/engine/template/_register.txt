@@ -3,3 +3,4 @@ set.movie_update
 set.cmpt_canvas_utility
 set.plateform
 set.for_testing
+set.recipe

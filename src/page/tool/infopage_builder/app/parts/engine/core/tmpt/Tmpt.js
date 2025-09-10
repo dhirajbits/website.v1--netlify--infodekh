@@ -81,6 +81,7 @@ export class Tmpt {
     }
 
     _getBodyStyle ({tmptDefinitionBlob}) {
+        
         let bodyStyleHtmlCode = tmptDefinitionBlob.bodystyle;
         if (!bodyStyleHtmlCode) {bodyStyleHtmlCode = "";}
         

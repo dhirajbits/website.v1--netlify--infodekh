@@ -19,10 +19,11 @@ export class PageRaw {
 		return pageRaw;
 	}
 
-	constructor({ tmptSetNames, tmptHub, geneDict }) {
+	constructor({ tmptSetNames, tmptHub, plateformCmptTmptRefId, geneDict }) {
 		if (!tmptSetNames) tmptSetNames = [];
 
 		this.tmptHub = null; // TmptHub
+		this.plateformCmptTmptRefId = null; //String
 		this.generalInfo = null; // PageGeneralInfo
 		this.meta = null; // PageMeta
 		this.tmptSET = null; //TmptSET
@@ -42,6 +43,7 @@ export class PageRaw {
 		// ASSIGNING PROPERTIES
 		else {
 			this.tmptHub = tmptHub;
+			this.plateformCmptTmptRefId = plateformCmptTmptRefId;
 			this.generalInfo = new PageGeneralInfo({});
 			this.meta = new PageMeta({});
 			this.relationalUnitRefRegister = new RelationalUnitRefRegister();
@@ -55,17 +57,24 @@ export class PageRaw {
 	}
 
 	async _zInit() {
-		await this._zConstructFromGeneDict({
-			geneDict: this.__geneDict,
-			tmptHub: this.__tmptHub,
-		});
+		if (this.__geneDict) {
+			await this._zConstructFromGeneDict({
+				geneDict: this.__geneDict,
+				tmptHub: this.__tmptHub,
+			});
 
-		delete this.__geneDict;
-		delete this.__tmptHub;
+			delete this.__geneDict;
+			delete this.__tmptHub;
+		}
+
+		else {
+			await this.CmptRaw.zCreateAndAdd({tmptRefId: this.plateformCmptTmptRefId});
+		}
 	}
 
 	async _zConstructFromGeneDict({ geneDict, tmptHub}) {
 		this.tmptHub = tmptHub;
+		this.plateformCmptTmptRefId = geneDict.plateformCmptTmptRefId;
 		this.generalInfo = PageGeneralInfo.fromGeneDict({
 			geneDict: geneDict.generalInfo,
 		});
@@ -92,11 +101,9 @@ export class PageRaw {
 			const cmptRawGeneDict =
 				geneDict.cmptRawRefIdToCmptRawGeneDict[cmptRawRefId];
 
-				console.log(this.tmptHub)
 				const cmptRawTmpt = await this.tmptHub.getTmptByRefId({
 					tmptRefId: cmptRawGeneDict["tmptRefId"],
 				});
-				console.log(cmptRawTmpt)
 
 			if (!cmptRawTmpt) throw new TmptNotFoundError();
 
@@ -114,6 +121,7 @@ export class PageRaw {
 		const cmptRawRefIdToCmptRawGeneDict =
 			this.cmptRawBUSH.getAllCmptRawsInRefIdToCmptRawFormat();
 
+
 		for (let [refId, cmptRaw] of Object.entries(
 			cmptRawRefIdToCmptRawGeneDict
 		)) {
@@ -121,6 +129,7 @@ export class PageRaw {
 		}
 
 		return {
+			plateformCmptTmptRefId: this.plateformCmptTmptRefId,
 			generalInfo: this.generalInfo.toGeneDict(),
 			meta: this.meta.toGeneDict(),
 			tmptSETGeneDict: this.tmptSET.toGeneDict(),

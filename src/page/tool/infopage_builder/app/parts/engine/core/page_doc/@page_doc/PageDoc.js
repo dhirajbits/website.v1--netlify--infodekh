@@ -27,18 +27,25 @@ export class PageDoc {
 
       // OTHER ACTIONS
       this._loadCmptDocsFromSeed();
+      // console.log(this);
    }
 
 
    _loadCmptDocsFromSeed() {
       const refIdToCmptRaw = this.seed_pageRaw.cmptRawBUSH.getAllCmptRawsInRefIdToCmptRawFormat();
 
+      const refIdToCmptDoc = {};
       for (let refId in refIdToCmptRaw) {
          const cmptDoc = new CmptDoc({
             seed_cmptRaw: refIdToCmptRaw[refId],
             relationalUnitRefRegister: this.relationalUnitRefRegister,
          });
-         this.cmptDocBUSH.addCmptDoc({cmptDoc: cmptDoc});
+         refIdToCmptDoc[cmptDoc.refId] = cmptDoc;
       }
+
+      for (let [refId, cmptDoc] of Object.entries(refIdToCmptDoc)) {
+         cmptDoc.updateHtmlDoc();
+         this.cmptDocBUSH.addCmptDoc({cmptDoc: cmptDoc});
+      };
    }
 }

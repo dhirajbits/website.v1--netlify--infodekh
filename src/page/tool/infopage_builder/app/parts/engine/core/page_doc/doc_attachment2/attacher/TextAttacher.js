@@ -10,7 +10,7 @@ export class TextAttacher extends DocAttacher {
       });
 
       this.seed_textAttacher = seed_attacher; //PageRaw:TextAttacher
-      if (this.isAttached) this._updateHtmlDoc();
+      // if (this.isAttached) this.updateHtmlDoc();
    }
 
    get attacherType() {
@@ -23,20 +23,20 @@ export class TextAttacher extends DocAttacher {
 
    attach(text) {
       const error = this.seed_textAttacher.attach(text);
-      if(!error) this._updateHtmlDoc();
+      if(!error) this.updateHtmlDoc();
    }
 
    detach(text) {
       const error = this.seed_textAttacher.detach(text)
-      if (!error) this._updateHtmlDoc();
+      if (!error) this.updateHtmlDoc();
    }
 
    detachFromAny() {
       const error = this.seed_textAttacher.detachFromAny();
-      if (!error) this._updateHtmlDoc();
+      if (!error) this.updateHtmlDoc();
    }
 
-   _updateHtmlDoc() {
+   updateHtmlDoc() {
       this.location.cmptHookDoc.bodyElmt.textContent = this.attachedText;
    }
 }

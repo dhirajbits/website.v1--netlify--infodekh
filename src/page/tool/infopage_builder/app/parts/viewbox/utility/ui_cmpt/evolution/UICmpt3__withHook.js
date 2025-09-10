@@ -21,8 +21,10 @@ export class UICmpt3__withHook extends UICmpt2__withStyle {
    }
 
    hook(hookName) {
+      if (!hookName) return this.hookNameToHook["self"]
       return this.hookNameToHook[hookName]
    }
+
 
 
    addHook({name, selector, type}) {

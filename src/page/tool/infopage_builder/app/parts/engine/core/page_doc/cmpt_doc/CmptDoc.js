@@ -74,6 +74,17 @@ export class CmptDoc {
 		return this.hookNameToHookDoc[hookName];
 	}
 
+	updateHtmlDoc() {
+		return this.updateHooksAttacherHtmlDoc();
+	}
+
+	updateHooksAttacherHtmlDoc() {
+		for (let hookName in this.hookNameToHookDoc) {
+			const hookDoc = this.hookNameToHookDoc[hookName];
+			hookDoc.updateAttacherHtmlDoc();
+		}
+	}
+
 	_createBodyElmt() {
 		return this.seed_cmptRaw.tmpt.bodyElmt.cloneNode(true);
 	}

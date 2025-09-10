@@ -30,7 +30,7 @@ export function createAsideCmpt({Cmpt, view, viewbox, panel}) {
       type: UICmpt.HOOKTYPE.CMPT_LIST,
    });
 
-   handleChildren({cmpt})
+   handleChildren({view, viewbox, panel, cmpt})
 
    return cmpt;
 
@@ -38,10 +38,10 @@ export function createAsideCmpt({Cmpt, view, viewbox, panel}) {
 }
 
 
-function handleChildren ({cmpt}) {
-   const pageDetailsStripCmpt = createPageDetailsStripCmpt();
-   const actionBtnStripCmpt = createActionBtnsStripCmpt();
-   const cmptConfigCatNavStripCmpt = createCmptConfigCatNavStripCmpt();
+function handleChildren ({view, viewbox, panel, cmpt}) {
+   const pageDetailsStripCmpt = createPageDetailsStripCmpt({view, viewbox, panel});
+   const actionBtnStripCmpt = createActionBtnsStripCmpt({view, viewbox, panel});
+   const cmptConfigCatNavStripCmpt = createCmptConfigCatNavStripCmpt({view, viewbox, panel});
 
    cmpt.hook("self").attach(pageDetailsStripCmpt);
    cmpt.hook("self").attach(actionBtnStripCmpt);

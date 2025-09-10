@@ -19,8 +19,8 @@ export function createCreateOrLoadPageSOLCmpt({view, panel}) {
          type: "option",
          id: `${pageType}Option`,
          optionName: visiblePageType,
-         callback: () => {
-            const error = panel.Page.mtd__createNewBlankPageOfType({pageType});
+         callback: async () => {
+            const error = await panel.Page.zMtd__createNewBlankPageOfType({pageType});
             view.loadPage();
          },
          callbackOnce: true,
@@ -54,7 +54,8 @@ export function createCreateOrLoadPageSOLCmpt({view, panel}) {
 
    cmpt.css = `
       #----- {
-         box-shadow: 0px 0px 50px #00000094;
+         box-shadow: 0px 0px 50px #0000007f;
+         opacity: 0.97;
       }
    `;
    return cmpt;

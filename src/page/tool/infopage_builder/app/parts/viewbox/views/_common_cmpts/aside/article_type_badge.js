@@ -23,6 +23,7 @@ export function createArticleTypeBadgeCmpt() {
       #----- .articleType {
          text-align: left;
          font-size: 1rem;
+         overflow: hidden;
       }
 
    `;

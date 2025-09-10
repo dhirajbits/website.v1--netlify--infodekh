@@ -1,3 +1,4 @@
+import { AttacherAttachingError } from "../../../error/AttacherAttachingError.js";
 import { AttacherDetachingError } from "../../../error/AttacherDetachingError.js";
 import { insertItemAtIndexInArray } from "../../../utility/array.js";
 import { RawAttachingPoint } from "../attaching_point/RawAttachingPoint.js";
@@ -42,11 +43,12 @@ export class MultiAPAttacher extends RawAttacher {
       // Update this attacher
       const newAttacherAttachingIndex = this._getNewAttachingPointAttachingIndex({attachingPoint});
 
-      insertItemAtIndexInArray({
+      this.attachedAPRefIdList = insertItemAtIndexInArray({
          index: newAttacherAttachingIndex,
          item: attachingPoint.refId,
          arr: this.attachedAPRefIdList,
       });
+
 
       this._updateEachAttachedAPAttachingIndex();
       super._updateAttachment(true);
@@ -108,6 +110,8 @@ export class MultiAPAttacher extends RawAttacher {
    _getNewAttachingPointAttachingIndex({attachingPoint}) {
       const MAX_POSSIBLE_INDEX = this.attachedAPRefIdList.length;
       let attachingIndex = attachingPoint.attachedAtIndex;
+
+      if (attachingIndex === null) {return MAX_POSSIBLE_INDEX; }
 
       if (attachingPoint.attachedAtIndex < 0)
          attachingIndex = 0;

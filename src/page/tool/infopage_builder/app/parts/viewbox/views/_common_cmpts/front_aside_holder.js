@@ -36,7 +36,7 @@ export function createFrontAsideHolderCmpt({Cmpt, view, viewbox, panel}) {
 
 function handleChildren({cmpt, view, panel}) {
    const frontCmpt = createFrontCmpt({view, panel});
-   const asideCmpt = createAsideCmpt({});
+   const asideCmpt = createAsideCmpt({view, panel});
 
    cmpt.hook("self").attach(frontCmpt);
    cmpt.hook("self").attach(asideCmpt);

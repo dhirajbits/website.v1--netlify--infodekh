@@ -10,7 +10,7 @@ export class HtmlAttacher extends DocAttacher {
       });
 
       this.seed_htmlAttacher = seed_attacher; //PageRaw:HtmlAttacher
-      this._updateHtmlDoc();
+      // this.updateHtmlDoc();
    }
 
    get attacherType() {
@@ -23,20 +23,20 @@ export class HtmlAttacher extends DocAttacher {
 
    attach(html) {
       const error = this.seed_htmlAttacher.attach(html);
-      if(!error) this._updateHtmlDoc();
+      if(!error) this.updateHtmlDoc();
    }
 
    detach(html) {
       const error = this.seed_htmlAttacher.detach(html)
-      if (!error) this._updateHtmlDoc();
+      if (!error) this.updateHtmlDoc();
    }
 
    detachFromAny() {
       const error = this.seed_htmlAttacher.detachFromAny();
-      if (!error) this._updateHtmlDoc();
+      if (!error) this.updateHtmlDoc();
    }
 
-   _updateHtmlDoc() {
+   updateHtmlDoc() {
       this.location.cmptHookDoc.bodyElmt.innerHTML = this.attachedHtml;
    }
 }

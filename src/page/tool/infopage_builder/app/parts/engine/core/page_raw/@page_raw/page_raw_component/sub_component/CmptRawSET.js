@@ -19,6 +19,6 @@ export class CmptRawSET {
    }
 
    getAllCmptRawsInRefIdToCmptRawFormat() {
-      return this.cmptRawRefIdToCmptRaw;
+      return {...this.cmptRawRefIdToCmptRaw};
    }
 }

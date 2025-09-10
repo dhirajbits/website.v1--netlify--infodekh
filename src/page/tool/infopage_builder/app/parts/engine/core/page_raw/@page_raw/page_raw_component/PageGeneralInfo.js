@@ -5,7 +5,7 @@ export class PageGeneralInfo {
 	constructor({ geneDict }) {
 		if (!geneDict) geneDict = {};
 
-		this.pageName = geneDict.pageName || ""; // String
+		this.pageName = geneDict.pageName || "Untitle"; // String
 		this.pageType = geneDict.pageType || ""; //String;
 		this.createdAt = geneDict.createdAt || Date.now(); // Number
 		this.lastUpdatedAt = geneDict.lastUpdatedAt || Date.now(); // Number

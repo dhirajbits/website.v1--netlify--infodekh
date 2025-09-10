@@ -1,4 +1,5 @@
 import { PagePanel } from "./sections/PagePanel.js";
+import { PageTmptSet } from "./sections/PageTmptSet.js";
 
 
 export class Panel {
@@ -9,6 +10,7 @@ export class Panel {
       else Panel._instance = this;
 
       this.Page = new PagePanel({panel: this});
+      this.Tmpt = new PageTmptSet({panel: this});
    }
 
    boot() {

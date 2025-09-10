@@ -8,7 +8,7 @@ export function createFrontCmpt({view, parentCmpt, panel}) {
    });
 
    cmpt.html = `
-      <div class="pageCanvas"> </div>
+      <div class="--UICMPT--class-pageCanvas--"> </div>
    `;
 
    cmpt.css = `
@@ -25,7 +25,7 @@ export function createFrontCmpt({view, parentCmpt, panel}) {
          justify-content: center;
       }
 
-      #----- .pageCanvas {
+      #----- .--UICMPT--class-pageCanvas-- {
          background-color: var(--COLOR--primary--dark);
          max-width: 1024px;
          min-width: 120px;
@@ -34,12 +34,13 @@ export function createFrontCmpt({view, parentCmpt, panel}) {
          box-shadow: 0px 0px 50px var(--COLOR--primary--dark);
          flex-grow: 1;
          flex-shrink: 0;
+         overflow-y: scroll;
       }
    `;
    
    cmpt.addHook({
       name: "pageCanvas",
-      selector: "#----- .pageCanvas",
+      selector: "#----- .--UICMPT--class-pageCanvas--",
       type: UICmpt.HOOKTYPE.CMPT,
    });
 

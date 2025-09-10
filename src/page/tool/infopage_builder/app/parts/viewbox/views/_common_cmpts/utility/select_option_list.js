@@ -37,7 +37,7 @@ export function createSelectOptionListCmpt({ cmptName, optionItemList }) {
          background-color: var(--COLOR--dark--dark);
          padding: 0.4rem 1rem;
          border-radius: 1rem;
-         border: 1px solid #333;
+         border: 1px solid #222;
          position: absolute;
          font-size: 1rem;
          text-align: left;
@@ -113,8 +113,8 @@ function createOptionCmpt({optionItem}) {
 
       #----- .${optionItem.id} {
          color: var(--COLOR--light--dark);
-         padding-block: 0.2rem;
-         padding-inline: 0.5rem;
+         padding-block: 0.3rem;
+         padding-inline: 0.6rem;
          border-radius: 0.4rem;
          width: 100%;
       }

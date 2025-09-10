@@ -3,6 +3,10 @@ export class CmptDocSET {
       this.refIdToCmptDoc = {}; //Object[String:CmptDoc]
    }
 
+   isExists({cmptDoc}) {
+      return Boolean(this.refIdToCmptDoc[cmptDoc.refId]);
+   }
+
    addCmptDoc({cmptDoc}) {
       this.refIdToCmptDoc[cmptDoc.refId] = cmptDoc;
    }

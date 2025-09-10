@@ -8,7 +8,7 @@ const model = new Model();
 model.boot();
 
 const engine = new Engine({model});
-engine.boot();
+await engine.boot();
 
 const panel = new Panel({engine});
 panel.boot();

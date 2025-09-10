@@ -13,7 +13,8 @@ export function removeEmptyStringFromArray({arr}) {
 export function insertItemAtIndexInArray({index, item, arr}) {
     // Handling item to insert at last
     if ((index === arr.length) || (index === null)) {
-        return arr.push(item);
+        arr.push(item);
+        return arr;
     }
 
     // Handling item to be insert in-between array

@@ -68,7 +68,7 @@ export class TmptSet {
         // Handle template retrival from group
         if (groupName) {
             if (groupName in this.tmptGroupNameToGroup) {
-                return this.tmptGroupNameToGroup[groupName].getTmpt({
+                return await this.tmptGroupNameToGroup[groupName].getTmpt({
                     tmptName: tmptName
                 });
             }
@@ -98,7 +98,7 @@ export class TmptSet {
 
         // Adding directTmpt
         for (let tmptName of directTmptNames) {
-            const tmpt = await this.getTmpt({tmptName: tmptName});
+            const tmpt = await this.getTmpt({groupName: "", tmptName: tmptName});
             refIdToTmpt[tmpt.refId] = tmpt;
         }
         // Adding templated from group

@@ -1,5 +1,5 @@
 import { PageDoc, PageRawBuilder } from "../../core/exports/main.js";
-import { PageCanvas } from "../../core/page_canvas/PageCanvas.js";
+import { PageCanvas } from "../../core/page_canvas/@page_canvas/PageCanvas.js";
 
 
 export class Page {
@@ -10,20 +10,24 @@ export class Page {
       this.pageCanvas = null; //PageCanvas
    }
 
+   savePageToLocalStorage() {
+      this.engine.model.AppData.pageRawGeneDict = this.pageRaw.toGeneDict();
+   }
+
    getAvailablePageTypes() {
       return Object.keys(PageRawBuilder.pageTypeToBuilderMethod);
    }
 
-   loadBlankPage({pageType}) {
-      this.pageRaw = PageRawBuilder.buildNewPageOfType({type: pageType});
+   async  zLoadBlankPage({pageType}) {
+      this.pageRaw = await PageRawBuilder.zBuildNewPageOfType({type: pageType});
       this._loadPageDocAndPageCanvas();
-      this.engine.model.AppData.pageRawGeneDict = this.pageRaw.toGeneDict();
+      this.savePageToLocalStorage();
    }
 
-   loadPageFromGeneDict({geneDict}) {
-      this.pageRaw = PageRawBuilder.zBuildPageByGeneDict({geneDict});
+   async zLoadPageFromGeneDict({geneDict}) {
+      this.pageRaw = await PageRawBuilder.zBuildPageByGeneDict({geneDict});
       this._loadPageDocAndPageCanvas();
-      this.engine.model.AppData.pageRawGeneDict = this.pageRaw.toGeneDict();
+      this.savePageToLocalStorage()
 
    }
 

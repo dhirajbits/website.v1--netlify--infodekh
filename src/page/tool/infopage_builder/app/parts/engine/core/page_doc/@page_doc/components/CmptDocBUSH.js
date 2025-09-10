@@ -2,12 +2,48 @@ import { CmptDocSET } from "./sub_component/CmptDocSET.js";
 
 export class CmptDocBUSH {
 	constructor() {
-		this.cmptDocSET = new CmptDocSET();
+		this.tmptStyleElmt = document.createElement("div");
+		this.cmptStyleElmt = document.createElement("div");
+		this.cmptStyleConfigElmt = document.createElement("div");
+		this.bodyElmt = document.createElement("div");
+		this.includedTmpts = []; // Array[Tmpt]
+		this.cmptDocSET = new CmptDocSET(); // CmptDocSET
+
+		this.bodyElmt.style.minHeight = "100%";
 	}
 
-	addCmptDoc({ cmptDoc, parentCmptDoc, hookName, parentCmptHookDoc }) {
+	addCmptDoc({ cmptDoc }) {
+		if (cmptDoc.constructor.name !== "CmptDoc") return;
+		if (this.cmptDocSET.isExists({cmptDoc})) return;
+
 		// Adding to CmptDocSET
 		this.cmptDocSET.addCmptDoc({ cmptDoc });
+
+		// Updating this htmlDoc
+		
+		// -- Adding tmpt style
+		if (!this.includedTmpts.includes(cmptDoc.tmpt)) {
+			this.includedTmpts.push(cmptDoc.tmpt);
+			this.tmptStyleElmt.appendChild(cmptDoc.tmpt.style.bodyElmt);
+		}
+
+		// -- Adding cmpt style
+		this.cmptStyleElmt.appendChild(cmptDoc.style.bodyElmt);
+
+		// -- Adding cmpt style config 
+		// this.cmptStyleConfigElmt.appendChild(cmptDoc.styleConfig.bodyElmt);
+
+		// -- Adding html elmt
+		this.bodyElmt.appendChild(cmptDoc.bodyElmt);
+	}
+
+	addCmptDoc2({ cmptDoc, parentCmptDoc, hookName, parentCmptHookDoc }) {
+		if (cmptDoc.constructor.name !== "CmptDoc") return;
+		if (this.cmptDocSET.isExists({cmptDoc})) return;
+
+		// Adding to CmptDocSET
+		// this.cmptDocSET.addCmptDoc({ cmptDoc });
+		this.addCmptDoc({cmptDoc});
 
 		parentCmptHookDoc = this._findParentCmptHookDoc({
 			parentCmptDoc,
@@ -31,6 +67,13 @@ export class CmptDocBUSH {
 		}
 
 		this.cmptDocSET.removeCmptDoc({ cmptDoc });
+
+		// -- Removing cmpt style
+		this.cmptStyleElmt.appendChild(cmptDoc.style.bodyElmt);
+
+		// -- Removing cmpt style config 
+		// this.cmptStyleConfigElmt.appendChild(cmptDoc.styleConfig.bodyElmt);
+
 	}
 
 	removeCmptDocByRefId({ cmptDocRefId }) {
@@ -43,13 +86,24 @@ export class CmptDocBUSH {
 
 	moveCmptDoc({ cmptDoc, parentCmptDoc, hookName, parentCmptHookDoc }) {
 		// Remove cmptDoc
-		this.removeCmptDoc({ cmptDoc });
-		this.addCmptDoc({
-			cmptDoc,
+		// this.removeCmptDoc({ cmptDoc });
+		// this.addCmptDoc({
+		// 	cmptDoc,
+		// 	parentCmptDoc,
+		// 	hookName,
+		// 	parentCmptHookDoc,
+		// });
+
+		parentCmptHookDoc = this._findParentCmptHookDoc({
 			parentCmptDoc,
 			hookName,
 			parentCmptHookDoc,
 		});
+
+		if (parentCmptHookDoc)
+			parentCmptHookDoc.attacher.attach({
+				attachingPoint: cmptDoc.attachingPoint,
+			});
 	}
 
 	getCmptDocByRefId({ cmptDocRefId }) {

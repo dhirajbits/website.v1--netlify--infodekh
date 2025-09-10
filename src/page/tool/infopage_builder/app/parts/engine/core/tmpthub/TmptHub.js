@@ -44,6 +44,7 @@ export class TmptHub {
 
     async getTmptByRefId ({tmptRefId}) {
         const [setName, groupName, tmptName] = tmptRefId.split(".");
+
         const tmptSet = this.tmptSetNameToTmptSet[setName];
         if (tmptSet) {
             return await tmptSet.getTmpt({

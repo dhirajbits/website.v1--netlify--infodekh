@@ -17,6 +17,19 @@ export class UICmptHook {
 		return [...this.attachedUICmpts];
 	}
 
+	get firstChildCmpt() {
+		return this.attachedUICmpts[0];
+	}
+
+	childCmpt(name) {
+		for (let cmpt of this.attachedUICmpts) {
+			if (cmpt.name === name) {
+				return cmpt;
+			}
+		}
+	}
+
+
 	attach(attachable) {
 		switch (this.type) {
 			case UICmpt.HOOKTYPE.TEXT:
@@ -45,15 +58,15 @@ export class UICmptHook {
 
 	detach(uiCmpt = null) {
 		switch (this.type) {
-			case this.uiCmpt.HOOKTYPE.TEXT:
+			case UICmpt.HOOKTYPE.TEXT:
 				this._detachText();
 				break;
 
-			case this.uiCmpt.HOOKTYPE.HTML:
+			case UICmpt.HOOKTYPE.HTML:
 				this._detachHtml();
 				break;
 
-			case this.uiCmpt.HOOKTYPE.CMPT:
+			case UICmpt.HOOKTYPE.CMPT:
             if (uiCmpt) {
                this._detachUICmpt(uiCmpt)
             }
@@ -62,7 +75,7 @@ export class UICmptHook {
             }
 				break;
 
-			case this.uiCmpt.HOOKTYPE.CMPT_LIST:
+			case UICmpt.HOOKTYPE.CMPT_LIST:
 				if (uiCmpt) {
                this._detachUICmpt(uiCmpt);
             }

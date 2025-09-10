@@ -10,7 +10,7 @@ export class MultiAPAttacher extends DocAttacher {
       });
 
       this.seed_multiAPAttacher = seed_attacher; //MultiAPAttacher
-      this._updateHtmlDoc();
+      // this.updateHtmlDoc();
    }
 
    get attacherType() {
@@ -37,22 +37,22 @@ export class MultiAPAttacher extends DocAttacher {
       const error = this.seed_multiAPAttacher.attach(
          attachingPoint.seed_rawAttachingPoint
       );
-      if (!error) this._updateHtmlDoc();
+      if (!error) this.updateHtmlDoc();
    }
 
    detach(attachingPoint) {
       const error = this.seed_multiAPAttacher.detach(
          attachingPoint.seed_docAttachingPoint
       );
-      if (!error) this._updateHtmlDoc();
+      if (!error) this.updateHtmlDoc();
    }
 
    detachFromAny() {
       const error = this.seed_multiAPAttacher.detachFromAny();
-      if (!error) this._updateHtmlDoc();
+      if (!error) this.updateHtmlDoc();
    }
 
-   _updateHtmlDoc() {
+   updateHtmlDoc() {
       this.location.cmptHookDoc.bodyElmt.innerHTML = "";
       for (let ap of this.attachedAPList) {
          ap.location.cmptDoc.fitInsideElmt({

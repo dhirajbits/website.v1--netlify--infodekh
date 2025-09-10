@@ -1,2 +1,5 @@
 main_heading.html
 plateform.html
+group.something
+group.heading
+group.paragraph

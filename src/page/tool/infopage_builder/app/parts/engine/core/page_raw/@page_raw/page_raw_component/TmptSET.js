@@ -40,7 +40,6 @@ export class TmptSET {
 		const tmpt = await this.tmptHub.zGetTmptByRefId({
 			tmptRefId: tmptRefId,
 		});
-
 		if (!tmpt) return null;
 
 		const tmptDetails = {};

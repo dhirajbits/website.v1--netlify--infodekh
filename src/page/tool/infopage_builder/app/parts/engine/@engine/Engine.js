@@ -9,9 +9,9 @@ export class Engine {
       this.Page = new Page({engine: this});
    }
 
-   boot() {
+   async boot() {
       const pageRawGeneDict = this.model.AppData.pageRawGeneDict;
       if (pageRawGeneDict) 
-         this.Page.loadPageFromGeneDict({geneDict: pageRawGeneDict});
+         await this.Page.zLoadPageFromGeneDict({geneDict: pageRawGeneDict});
    }
 }

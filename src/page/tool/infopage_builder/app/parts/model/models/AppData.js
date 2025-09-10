@@ -6,7 +6,7 @@ export class AppData {
    // Prioraties local storage data
 
    get pageRawGeneDict() {
-      return ;
+      // return ;
       let geneDict = localStorage.getItem("pageRawGeneDict");
       if (geneDict) geneDict = JSON.parse(geneDict);
       return geneDict;

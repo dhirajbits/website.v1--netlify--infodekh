@@ -43,7 +43,6 @@ export class TmptGroup {
     }
 
     async getTmpt ({tmptName}) {
-        console.log(tmptName)
         if (tmptName in this.tmptNameToTmpt) {
             return this.tmptNameToTmpt[tmptName];
         }
