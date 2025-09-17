@@ -123,7 +123,6 @@
 }
 
 ._Slider .__SlideNavbar .__SlideNavOptions{
-    display: flex;
     gap: 1.5rem;
     /* background-color: white; */
     /* height: 100%; */

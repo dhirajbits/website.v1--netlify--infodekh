@@ -1,4 +1,3 @@
-import { RelationalUnit } from "../../../page_doc/doc_attachment/relational_unit/RelationalUnit.js";
 import { RawRelationalUnit } from "../relational_unit/RawRelationalUnit.js";
 
 

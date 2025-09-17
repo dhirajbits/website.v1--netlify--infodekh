@@ -35,7 +35,7 @@ export class TmptSET {
 			tmptRefId: tmptRefId,
 		});
 
-		if (!tmptSetName in this.tmptSetNames) return null;
+		if (!(tmptSetName in this.tmptSetNames)) return null;
 
 		const tmpt = await this.tmptHub.zGetTmptByRefId({
 			tmptRefId: tmptRefId,
@@ -74,7 +74,7 @@ export class TmptSET {
 			tmptRefId: tmptRefId,
 		});
 
-		if (!setName in this.tmptSetNames) {
+		if (!(setName in this.tmptSetNames)) {
 			return null;
 		}
 
