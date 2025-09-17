@@ -1,6 +1,0 @@
-set.movie_update_article
-set.recipe_article
-set.webpage
-set.movie_update
-set.cmpt_canvas_utility
-set.plateform

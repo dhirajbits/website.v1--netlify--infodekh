@@ -1,2 +1,0 @@
-./cmptfy/asset/tmpt/set.infocontent
-./cmptfy/asset/tmpt/set.webpage

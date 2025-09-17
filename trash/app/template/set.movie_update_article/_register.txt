@@ -1,3 +1,0 @@
-group.listing
-group.paragraph
-helloworld.html

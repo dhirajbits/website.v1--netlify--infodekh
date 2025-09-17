@@ -1,9 +1,0 @@
-{
-    "cmptName": "typographyBox",
-    "tmptName": "typographyBox",
-    "style": {
-        "background-color": "yellow",
-        "font-weight": "600"
-    },
-    "hook": {}
-}
