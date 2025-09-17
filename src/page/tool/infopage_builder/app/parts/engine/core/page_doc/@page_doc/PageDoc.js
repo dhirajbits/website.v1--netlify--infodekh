@@ -44,8 +44,11 @@ export class PageDoc {
       }
 
       for (let [refId, cmptDoc] of Object.entries(refIdToCmptDoc)) {
-         cmptDoc.updateHtmlDoc();
          this.cmptDocBUSH.addCmptDoc({cmptDoc: cmptDoc});
+      };
+
+      for (let [refId, cmptDoc] of Object.entries(refIdToCmptDoc)) {
+         cmptDoc.updateHtmlDoc();
       };
    }
 }

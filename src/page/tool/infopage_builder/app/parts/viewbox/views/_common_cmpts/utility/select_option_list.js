@@ -7,6 +7,7 @@ const option = {
    id: "unique name (will be use as hookName)",
    optionName: "option name that is viewed to user.",
    haveNest: false/true;
+   isMuted: false/true;
    callback: "function",
    callbackArgDict : {},
    callbackOnce : true,
@@ -97,8 +98,11 @@ function createOptionCmpt({optionItem}) {
    let downArrow = "";
    if (optionItem.haveNest) downArrow = "▼";
 
+   let cssClass = `${optionItem.id}`;
+   if (optionItem.isMuted) cssClass += " isMuted";
+
    cmpt.html = `
-      <div class="${optionItem.id}">${optionItem.optionName}</div>
+      <div class="${cssClass}">${optionItem.optionName}</div>
       <div class="optionNestingIndicator">${downArrow}</div>
    `;
 
@@ -117,11 +121,21 @@ function createOptionCmpt({optionItem}) {
          padding-inline: 0.6rem;
          border-radius: 0.4rem;
          width: 100%;
+         cursor: pointer;
+      }
+
+      #----- .${optionItem.id}.isMuted {
+         color: #c4c4c443;
       }
 
       #----- .${optionItem.id}:hover {
          background-color: var(--COLOR--accent2);
          color: var(--COLOR--dark--dark);
+      }
+
+      #----- .${optionItem.id}.isMuted:hover {
+         background-color: unset;
+         color: #c4c4c443;
       }
 
       #----- .${optionItem.id}:active{

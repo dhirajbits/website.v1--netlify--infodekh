@@ -27,6 +27,7 @@ export class CmptDoc {
 
 		// MORE ACTIONS
 		this._addDefaultClassesToBodyElmt();
+
 	}
 
 	get id() {
@@ -138,16 +139,18 @@ export class CmptDoc {
 	}
 
    _getHookElmtFromCmptBodyElmtByHookName({hookName}) {
+		// console.log("--> ", this.seed_cmptRaw.tmpt.hooks[hookName].bodyElmt)
       const hookClassList = this.seed_cmptRaw.tmpt.hooks[hookName].bodyElmt.classList;
       if (!hookClassList.length) {
-         throw new Error("Can't create cmptHookDoc --> Hook have no default classNames.");
+         throw new Error("Can't create cmptHookDoc --> Hook HtmlElmt have no default classes assigned.");
       }
 
-      let hookElmtSelector = "." + Array.from(hookClassList);
+      let hookElmtSelector = "." + Array.from(hookClassList).join(".");
+		// console.log("hook-element-selector: ", hookElmtSelector)
       const hookElmt = this.bodyElmt.querySelector(hookElmtSelector);
 
       if (!hookElmt) {
-         throw new Error("Can't create cmptHookDoc --> Hook element not found in cmpt body elmt.");
+         throw new Error("Can't create cmptHookDoc --> Hook html element not found in cmpt body elmt.");
       }
 
       return hookElmt;

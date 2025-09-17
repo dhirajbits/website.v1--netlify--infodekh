@@ -1,0 +1,27 @@
+@body
+<div data-tmpt="one-one-one">
+   <div data-hook="text" data-hook-type="data" class="ArticleParagraph">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, molestias dicta consequuntur at labore aliquam aspernatur nobis sapiente suscipit adipisci ad illo voluptate qui deleniti minima repellendus asperiores ea voluptatem?
+   </div>
+   <div data-hook="text2" data-hook-type="data" class="ArticleParagraph">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, molestias dicta consequuntur at labore aliquam aspernatur nobis sapiente suscipit adipisci ad illo voluptate qui deleniti minima repellendus asperiores ea voluptatem?
+   </div>
+   <div data-hook="text3" data-hook-type="data" class="ArticleParagraph">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, molestias dicta consequuntur at labore aliquam aspernatur nobis sapiente suscipit adipisci ad illo voluptate qui deleniti minima repellendus asperiores ea voluptatem?
+   </div>
+</div>
+@bodyend
+
+@bodystyle
+<style>
+   #----- {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2rem;
+      margin-block: 2rem;
+   }
+
+   #----- > .ArticleParagraph {
+
+   }
+</style>

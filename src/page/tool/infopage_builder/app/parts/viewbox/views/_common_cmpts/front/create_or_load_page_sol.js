@@ -42,6 +42,7 @@ export function createCreateOrLoadPageSOLCmpt({view, panel}) {
       type: "option",
       id: "loadPageFromFile",
       optionName: "Load from file",
+      isMuted: true,
       callback: () => {console.log("load from file.")},
       haveNest: false,
    });

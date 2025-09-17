@@ -18,7 +18,7 @@ export class Viewbox extends Viewbox2__withView {
       const viewClass = ViewHUB.getViewClassByName({name: defaultViewName});
 
       // Creating new view
-      const view = new viewClass({panel: this.panel});
+      const view = new viewClass({viewbox: this, panel: this.panel});
       view.build();
 
       // Updating viewbox view

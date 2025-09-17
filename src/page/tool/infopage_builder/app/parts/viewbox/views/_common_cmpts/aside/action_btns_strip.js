@@ -1,13 +1,14 @@
 import { UICmpt } from "../../../utility/ui_cmpt/UICmpt.js";
+import { moreBtnClickHndr } from "../../without_page/handler/aside_btn/more_btn_click_hndr.js";
 
-export function createActionBtnsStripCmpt() {
+export function createActionBtnsStripCmpt({viewbox, view, panel}) {
 	const cmpt = new UICmpt({
 		name: "actionBtnsStrip",
 		tagname: "section",
 	});
 
 	cmpt.html = `
-      <button class="previewBtn">Preview</button>
+      <button class="codeBtn">Code</button>
       <button class="saveBtn">Save</button>
       <button class="moreBtn">:More:</button>
    `;
@@ -29,7 +30,7 @@ export function createActionBtnsStripCmpt() {
          border: none;
       }
 
-      #----- .previewBtn {
+      #----- .codeBtn {
          background-color: #518AB8;
       }
 
@@ -43,8 +44,8 @@ export function createActionBtnsStripCmpt() {
    `;
 
 	cmpt.addHook({
-		name: "previewBtn",
-		selector: "#----- .previewBtn",
+		name: "codeBtn",
+		selector: "#----- .codeBtn",
 		type: UICmpt.HOOKTYPE.GRAB,
 	});
 
@@ -59,6 +60,14 @@ export function createActionBtnsStripCmpt() {
 		selector: "#----- .moreBtn",
 		type: UICmpt.HOOKTYPE.GRAB,
 	});
+
+   cmpt.hook("moreBtn").bodyElmt.onclick = (event) => {
+      moreBtnClickHndr({event, viewbox, view, panel});
+   }
+
+   cmpt.hook("codeBtn").bodyElmt.onclick = async () => {
+      console.log(await panel.Page.zMtd__generateHtmlMarkup());
+   }
 
 	return cmpt;
 }

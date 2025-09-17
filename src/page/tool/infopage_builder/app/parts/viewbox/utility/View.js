@@ -5,6 +5,7 @@ import { NotImplementedError } from "../../../error/NotImplementedError.js";
 
 export class View {
    constructor({viewbox, panel}) {
+      this.viewbox = viewbox; //Viewbox
       this.panel = panel; //Panel
       this.bodyCmpt = null; //Cmpt
       this.bodyCmptRootHook = null; //CmptHook
@@ -14,10 +15,8 @@ export class View {
       this.styleElmt = null; //:HtmlElmt
 
       // ASSIGNING PROPERTIES
-      this.bodyCmpt = this._createBodyCmpt();
-      this.bodyCmptRootHook = this.bodyCmpt.hook("cmpts");
-      this.bodyElmt = this.bodyCmpt.bodyElmt;
-      this.styleElmt = this.bodyCmpt.style.bodyElmt;
+      this._reset();
+
    }
 
    _createBodyCmpt() {
@@ -45,6 +44,14 @@ export class View {
       });
 
       return cmpt;
+   }
+
+   _reset() {
+      this.title = ""; //String
+      this.bodyCmpt = this._createBodyCmpt();
+      this.bodyCmptRootHook = this.bodyCmpt.hook("cmpts");
+      this.bodyElmt = this.bodyCmpt.bodyElmt;
+      this.styleElmt = this.bodyCmpt.style.bodyElmt;
    }
 
 

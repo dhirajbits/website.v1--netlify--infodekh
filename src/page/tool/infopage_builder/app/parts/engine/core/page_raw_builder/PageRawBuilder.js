@@ -44,5 +44,16 @@ export class PageRawBuilder {
       return pageRaw;
    }
 
+   static async zResetPage({pageRaw}) {
+      const newPageRaw = new PageRaw({
+         tmptSetNames: pageRaw.tmptSET.tmptSetNames,
+         tmptHub: pageRaw.tmptHub,
+         plateformCmptTmptRefId: pageRaw.plateformCmptTmptRefId
+      });
+      await newPageRaw._zInit();
+      newPageRaw.generalInfo.pageType = pageRaw.generalInfo.pageType;
+      return newPageRaw;
+   }
+
 
 }

@@ -22,6 +22,8 @@ export class CmptHookDoc {
 		this._addDefaultClassesToBodyElmt({
 			bodyElmt: this.bodyElmt,
 		});
+
+		
 	}
 
    get refId() {

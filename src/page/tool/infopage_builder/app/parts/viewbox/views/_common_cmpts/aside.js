@@ -3,7 +3,7 @@ import { createActionBtnsStripCmpt } from "./aside/action_btns_strip.js";
 import { createCmptConfigCatNavStripCmpt } from "./aside/cmpt_config_cat_nav_strip.js";
 import { createPageDetailsStripCmpt } from "./aside/page_details_strip.js";
 
-export function createAsideCmpt({Cmpt, view, viewbox, panel}) {
+export function createAsideCmpt({view, viewbox, panel}) {
    const cmpt = new UICmpt({
       name: "aside",
       tagname: "div"

@@ -9,6 +9,8 @@ export class PageMeta {
 		this.title = geneDict.title || ""; // String
 	}
 
+	reset() {}
+
 	toGeneDict() {
 		return {
 			title: this.title,

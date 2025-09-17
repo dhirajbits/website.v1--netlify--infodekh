@@ -1,4 +1,5 @@
 import { PageDoc, PageRawBuilder } from "../../core/exports/main.js";
+import { WebpageHtmlGenerator } from "../../core/html_generator/HtmlGenerator.js";
 import { PageCanvas } from "../../core/page_canvas/@page_canvas/PageCanvas.js";
 
 
@@ -20,6 +21,7 @@ export class Page {
 
    async  zLoadBlankPage({pageType}) {
       this.pageRaw = await PageRawBuilder.zBuildNewPageOfType({type: pageType});
+      console.log(this.pageRaw)
       this._loadPageDocAndPageCanvas();
       this.savePageToLocalStorage();
    }
@@ -31,10 +33,21 @@ export class Page {
 
    }
 
+   async zReset() {
+      this.pageRaw = await PageRawBuilder.zResetPage({pageRaw: this.pageRaw});
+      this._loadPageDocAndPageCanvas();
+      this.savePageToLocalStorage();
+   }
+
    _loadPageDocAndPageCanvas() {
       this.pageDoc = new PageDoc({seed_pageRaw: this.pageRaw});
       this.pageCanvas = new PageCanvas({pageDoc: this.pageDoc});
    }
 
+   async zGenerateAndGetHtmlMarkupCode() {
+      if (!this.pageDoc) console.error("No page available to generate code.")
+      const generator = new WebpageHtmlGenerator({pageRaw: this.pageRaw})
+      return await generator.getHtmlMarkup();
+   }
 
 }

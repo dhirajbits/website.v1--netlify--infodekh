@@ -44,7 +44,7 @@ export class Viewbox1__withHtmlDoc extends Viewbox0 {
    }
 
    _resetBodyElmt() {
-      this._bodyElmt.innerHtml = "";
+      this._bodyElmt.innerHTML = "";
    }
 
    _updateBodyElmt({elmt}) {

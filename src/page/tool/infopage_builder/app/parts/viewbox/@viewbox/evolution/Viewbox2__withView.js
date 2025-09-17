@@ -37,6 +37,7 @@ class CurrentView {
       this.base._resetStyleElmt();
 		this.base._resetBodyElmt();
 	}
+	
 	get() {
 		return this.view;
 	}

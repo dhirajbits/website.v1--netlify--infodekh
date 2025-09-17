@@ -33,8 +33,8 @@ export class PagePanel {
    }
 
    async zMtd__createAndAddCmptToPage({tmptRefId}) {
-
       return await this.panel.engine.Page.pageCanvas.CmptMngr.zCreateAndAdd({tmptRefId});
+      
    }
 
    mtd__moveCmptToNewParent({cmptDoc, parentCmptDoc, hookName, parentCmptHookDoc}) {
@@ -44,5 +44,13 @@ export class PagePanel {
          hookName: hookName,
          parentCmptHook: parentCmptHookDoc,
       });
+   }
+
+   async zMtd__resetPage() {
+      await this.engine.Page.zReset();
+   }
+
+   async zMtd__generateHtmlMarkup() {
+      return await this.engine.Page.zGenerateAndGetHtmlMarkupCode();
    }
 }

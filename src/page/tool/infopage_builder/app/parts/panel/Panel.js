@@ -3,8 +3,9 @@ import { PageTmptSet } from "./sections/PageTmptSet.js";
 
 
 export class Panel {
-   constructor({engine}) {
+   constructor({engine, vbpanel}) {
       this.engine = engine; //Engine
+      this.vbpanel = vbpanel; //VBPanel
 
       if (Panel._instance) return Panel._instance;
       else Panel._instance = this;

@@ -37,6 +37,9 @@ export class TextAttacher extends DocAttacher {
    }
 
    updateHtmlDoc() {
-      this.location.cmptHookDoc.bodyElmt.textContent = this.attachedText;
+      this.location.cmptHookDoc.bodyElmt.innerHTML = this.attachedText.replaceAll(
+         "\n",
+         "<br>"
+      );
    }
 }

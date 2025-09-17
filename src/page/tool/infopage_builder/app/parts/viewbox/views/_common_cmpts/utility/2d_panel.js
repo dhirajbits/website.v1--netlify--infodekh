@@ -187,13 +187,26 @@ function createOptionPanelUICmpt({optionDefArr}) {
    });
 
    for (let optionDef of optionDefArr) {
-      const optionCmpt = createOptionItemUICmpt({
+      const optionCmpt = createOptionItemUICmptWithLightHoverEffect({
          optionItemDefDict: optionDef,
       });
       cmpt.hook().attach(optionCmpt);
    }
 
 	return cmpt;
+}
+
+function createOptionItemUICmptWithLightHoverEffect({optionItemDefDict}) {
+   const cmpt = createOptionItemUICmpt({optionItemDefDict});
+   const className = `--VBCC--${optionItemDefDict.id.replaceAll(".", "___")}`;
+   cmpt.css = `
+      #----- .${className}.selected,
+      #----- .${className}:hover {
+         background-color: #545454ff;
+         color: inherit;
+      }
+   `;
+   return cmpt;
 }
 
 function createOptionItemUICmpt({ optionItemDefDict }) {
@@ -204,10 +217,12 @@ function createOptionItemUICmpt({ optionItemDefDict }) {
 		tagname: "div",
 	});
 
-	cmpt.html = `
-         <div class="${optionItemDefDict.id}">${optionItemDefDict.optionName}</div>
-      `;
+   const className = `--VBCC--${optionItemDefDict.id.replaceAll(".", "___")}`;
 
+	cmpt.html = `
+         <div class="${className}">${optionItemDefDict.optionName}</div>
+      `;
+      
 	cmpt.css = `
          #----- {
             display: flex;
@@ -218,7 +233,7 @@ function createOptionItemUICmpt({ optionItemDefDict }) {
             cursor: pointer;
          }
    
-         #----- .${optionItemDefDict.id} {
+         #----- .${className} {
             color: var(--COLOR--light--dark);
             padding-block: 0.3rem;
             padding-inline: 0.6rem;
@@ -226,13 +241,13 @@ function createOptionItemUICmpt({ optionItemDefDict }) {
             width: 100%;
          }
    
-         #----- .${optionItemDefDict.id}.selected,
-         #----- .${optionItemDefDict.id}:hover {
+         #----- .${className}.selected,
+         #----- .${className}:hover {
             background-color: var(--COLOR--accent2);
             color: var(--COLOR--dark--dark);
          }
    
-         #----- .${optionItemDefDict.id}:active{
+         #----- .${className}:active{
             filter: brightness(150%);
          }
    

@@ -1,20 +1,32 @@
-import { Cmpt } from "../../utility/Cmpt.js";
 import { View } from "../../utility/View.js";
 import { createFrontAsideHolderCmpt } from "../_common_cmpts/front_aside_holder.js";
 import { pageTypeToVisiblePageType } from "../_common_cmpts/utility/page_type_to_visible_page_type.js";
+import { addCSSUtilityClasses } from "./utility/add_css_utility_classes.js";
 import { zCreateNewCmptOnCanvas } from "./handler/create_new_cmpt_on_canvas.js";
 import { CmptHookWithIntractiveEHPE } from "./utility/CmptHookWithIntractiveEHPE.js.js";
+import { IntractiveDataHook } from "./utility/IntractiveTextHook.js";
+import { addVBEventListener } from "./utility/add_vb_event_listener.js";
 
 export class WithoutPage extends View {
    constructor({viewbox, panel}) {
-      super({panel});
+      super({viewbox, panel});
+      
    }
 
    build() {
+      super._reset();
       this._buildTitle();
       this._buildBody();
       this.loadPage();
+      this._addCSSUtilityClasses();
+      addVBEventListener({withoutPageView: this});
    }
+
+   reBuild() {
+      this.build();
+      this.viewbox.CurrentView.update({view: this})
+   }
+
 
    loadPage() {
       const pageDoc = this.panel.Page.get__pageDoc();
@@ -41,22 +53,15 @@ export class WithoutPage extends View {
             
             if (hook.onCanvas.emptyHookPlaceholderElmt) {
                new CmptHookWithIntractiveEHPE({cmptHook: hook, panel: this.panel});
-               // const EHPEListener = () => {
-               //    hook.onCanvas.emptyHookPlaceholderElmt.onclick = async (event) => {
-               //       event.stopPropagation();
-               //       hook.onCanvas.emptyHookPlaceholderElmt.onclick = null;
-               //       await zCreateNewCmptOnCanvas({
-               //          view: this.view, 
-               //          panel: this.panel,
-               //          callback: EHPEListener,
-               //       })
-               //    }
-               // }
-               
-               // EHPEListener();
             }
+
+            this.makeIntractiveCmptDataHook({cmptDataHook: hook});
          }
       }
+   }
+
+   makeIntractiveCmptDataHook({cmptDataHook}) {
+      new IntractiveDataHook({cmptHook: cmptDataHook, panel: this.panel});
    }
 
    _buildTitle() {
@@ -65,11 +70,15 @@ export class WithoutPage extends View {
 
    _buildBody() {
       const frontAsideHolderCmpt = createFrontAsideHolderCmpt({
+         viewbox: this.viewbox,
          view: this,
-         parentCmpt: this.bodyCmpt,
          panel: this.panel,
       });
 
       this.bodyCmptRootHook.attach(frontAsideHolderCmpt);
+   }
+
+   _addCSSUtilityClasses() {
+      addCSSUtilityClasses({styleElmtWrapper: this.styleElmt});
    }
 }

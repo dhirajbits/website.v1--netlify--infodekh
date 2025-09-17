@@ -21,5 +21,9 @@ export class RelationalUnitRefRegister {
       return this.refIdToRelationalUnit[refId];
    }
 
+   reset() {
+      this.refIdToRelationalUnit = {};
+   }
+
 
 }

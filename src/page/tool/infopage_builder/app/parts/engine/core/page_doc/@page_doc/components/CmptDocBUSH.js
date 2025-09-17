@@ -1,5 +1,7 @@
 import { CmptDocSET } from "./sub_component/CmptDocSET.js";
 
+
+
 export class CmptDocBUSH {
 	constructor() {
 		this.tmptStyleElmt = document.createElement("div");

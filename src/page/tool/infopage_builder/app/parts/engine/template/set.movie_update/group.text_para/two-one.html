@@ -1,0 +1,24 @@
+@body
+<div data-tmpt="two-one">
+   <div data-hook="text2" data-hook-type="data" class="ArticleParagraph text2">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non libero ipsum nostrum nihil adipisci expedita ratione, incidunt placeat ex ea quis totam labore atque voluptas porro velit ullam laboriosam nulla.
+   </div>
+   <div data-hook="text" data-hook-type="data" class="ArticleParagraph">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur aliquid blanditiis, atque repudiandae, debitis quia necessitatibus eius fugiat ratione earum nihil voluptates quae praesentium quam, porro tempore beatae eaque pariatur!
+   </div>
+</div>
+@bodyend
+
+@bodystyle
+<style>
+   #----- {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2rem;
+      margin-block: 2rem;
+   }
+
+   #----- > .text2 {
+      grid-column: span 2;
+   }
+</style>

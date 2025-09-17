@@ -1,3 +1,4 @@
+import { VBRadioStation } from "../../../vb_radio_station/VBRadioStation.js";
 import { create2dPanelCmpt } from "../../_common_cmpts/utility/2d_panel.js";
 
 export class CmptHookWithIntractiveEHPE {
@@ -65,6 +66,14 @@ export class CmptHookWithIntractiveEHPE {
 		for (let [hookName, hook] of Object.entries(cmpt.hookNameToHookDoc)) {
 			new CmptHookWithIntractiveEHPE({cmptHook: hook, panel: this.panel})
 		}
+
+		await VBRadioStation.createAndBroadcastVBEvent({
+			eventName: "newCmptAddedOnPage",
+			viewName: "WithoutPage",
+			data: { cmpt: cmpt }
+		});
+
+		return cmpt;
    }
 
 

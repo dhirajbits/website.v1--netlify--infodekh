@@ -168,6 +168,10 @@ class ConstructionUtility {
 			relationalUnitRefRegister: relationalUnitRefRegister,
 		});
 
+		// Adding default text given in tmpt of data hook
+		if (cmptHookRaw.type === "data")
+			attacher.attach(cmptHookRaw.tmptHook.bodyElmt.textContent.trim())
+
 		return attacher;
 	}
 }

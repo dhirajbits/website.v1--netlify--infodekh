@@ -74,6 +74,8 @@ export class CmptRaw {
 					relationalUnitRefRegister: relationalUnitRefRegister
 				});
 		}
+
+		// console.log(this.hookNameToHookRaw)
 	}
 
 	_constructFromGeneDict({ geneDict, tmpt, relationalUnitRefRegister }) {

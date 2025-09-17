@@ -3,7 +3,7 @@ import { createAsideCmpt } from "./aside.js";
 import { createFrontCmpt } from "./front.js";
 
 
-export function createFrontAsideHolderCmpt({Cmpt, view, viewbox, panel}) {
+export function createFrontAsideHolderCmpt({view, viewbox, panel}) {
    const cmpt = new UICmpt({
       name: "frontAsideHolder",
       tagname: "div"
@@ -28,15 +28,15 @@ export function createFrontAsideHolderCmpt({Cmpt, view, viewbox, panel}) {
       type: UICmpt.HOOKTYPE.CMPT_LIST,
    });
 
-   handleChildren({cmpt, view, panel});
+   handleChildren({cmpt, viewbox, view, panel});
 
    return cmpt;
 }
 
 
-function handleChildren({cmpt, view, panel}) {
-   const frontCmpt = createFrontCmpt({view, panel});
-   const asideCmpt = createAsideCmpt({view, panel});
+function handleChildren({cmpt, viewbox, view, panel}) {
+   const frontCmpt = createFrontCmpt({viewbox, view, panel});
+   const asideCmpt = createAsideCmpt({viewbox, view, panel});
 
    cmpt.hook("self").attach(frontCmpt);
    cmpt.hook("self").attach(asideCmpt);

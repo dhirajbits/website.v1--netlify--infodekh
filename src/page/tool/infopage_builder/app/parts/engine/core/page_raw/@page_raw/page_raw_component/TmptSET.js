@@ -96,6 +96,8 @@ export class TmptSET {
 		return tmptRefIdToTmpts;
 	}
 
+	reset() {}
+
 	toGeneDict() {
 		return {
 			tmptSetNames: this.tmptSetNames,

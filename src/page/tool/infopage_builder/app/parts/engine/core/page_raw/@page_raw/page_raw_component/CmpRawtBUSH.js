@@ -70,4 +70,8 @@ export class CmptRawBUSH {
 		}
 		return attacher.location.cmptHookRaw;
 	}
+
+	reset() {
+		this.cmptRawSET = new CmptRawSET();
+	}
 }
