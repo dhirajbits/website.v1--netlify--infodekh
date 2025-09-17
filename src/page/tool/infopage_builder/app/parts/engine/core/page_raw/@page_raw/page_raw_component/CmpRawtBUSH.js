@@ -22,13 +22,15 @@ export class CmptRawBUSH {
 	}
 
 	removeCmptRaw({ cmptRaw }) {
-		// TODO -- detach given cmptRaw from parentCmptRaw-hook
-		const cmptRawParentHook = this.getCmptRawParentHook({
-			cmptRaw: cmptRaw,
-		});
-		if (cmptRawParentHook) {
-			cmptRawParentHook.attacher.detachAny(cmptRaw.attachingPoint);
+		if (cmptRaw.attachingPoint.isAttached) {
+			const cmptRawParentHook = this.getCmptRawParentHook({
+				cmptRaw: cmptRaw,
+			});
+			if (cmptRawParentHook) {
+				cmptRawParentHook.attacher.detach(cmptRaw.attachingPoint);
+			}
 		}
+		
 		return this.cmptRawSET.removeCmptRaw({ cmptRaw: cmptRaw });
 	}
 
