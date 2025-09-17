@@ -3,9 +3,11 @@ import { ViewHUB } from "./ViewHUB.js";
 
 export class Viewbox extends Viewbox2__withView {
    constructor({panel}) {
-      if (!Viewbox._instance) super({panel});
       if (Viewbox._instance) return Viewbox._instance;
-      else Viewbox._instance = this;
+      
+      super({panel});
+      Viewbox._instance = this;
+      
    }
    
    boot() {

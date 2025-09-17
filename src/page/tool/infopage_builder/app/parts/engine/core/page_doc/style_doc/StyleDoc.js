@@ -53,11 +53,13 @@ export class StyleDoc {
    }
 
    generateCSS(includeTemp=true) {
-      const totalCssDecleration = {...this.seed_styleRaw.declerations};
+      let totalCssDecleration = {...this.seed_styleRaw.declerations};
       
-      if (includeTemp) totalCssDecleration = {
-         ...this.seed_styleRaw.declerations,
-         ...this.seed_styleRaw.tempDeclerations
+      if (includeTemp) {
+         totalCssDecleration = {
+            ...this.seed_styleRaw.declerations,
+            ...this.seed_styleRaw.tempDeclerations
+         }
       }
 
       const declerationBlockString = CSSGenerationUtility.declerationDictToString({

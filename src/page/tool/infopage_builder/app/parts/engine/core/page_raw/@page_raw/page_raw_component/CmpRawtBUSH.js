@@ -34,9 +34,10 @@ export class CmptRawBUSH {
 
 	moveCmptRaw({ cmptRaw, parentCmptRaw, hookName }) {
 		throw new FeatureImplementableInFutureError();
-		// TODO -- detach given cmptRaw from old parentCmptRaw-hook
-		// TODO -- detach any attached attachable form parentCmptRaw-hook.attacher
-		// TODO -- attach given cmptRaw from new parentCmptRaw-hook
+		// Steps todo
+		// Step1: detach given cmptRaw from old parentCmptRaw-hook
+		// Strp2: detach any attached attachable form parentCmptRaw-hook.attacher
+		// Step3: attach given cmptRaw from new parentCmptRaw-hook
 	}
 
 	getCmptRawByRefId({ cmptRawRefId }) {

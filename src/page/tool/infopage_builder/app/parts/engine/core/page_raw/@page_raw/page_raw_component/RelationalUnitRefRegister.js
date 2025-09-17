@@ -7,13 +7,13 @@ export class RelationalUnitRefRegister {
    }
 
    register({relationalUnit}) {
-      if (!relationalUnit instanceof RawRelationalUnit) return;
+      if (!(relationalUnit instanceof RawRelationalUnit)) return;
       this.refIdToRelationalUnit[relationalUnit.refId] = relationalUnit;
    }
 
    unregister({relationalUnit}) {
-      if (!relationalUnit instanceof RawRelationalUnit) return;
-      if (!relationalUnit.refId in this.refIdToRelationalUnit) return;
+      if (!(relationalUnit instanceof RawRelationalUnit)) return;
+      if (!(relationalUnit.refId in this.refIdToRelationalUnit)) return;
       delete this.refIdToRelationalUnit[relationalUnit.refId];
    }
 

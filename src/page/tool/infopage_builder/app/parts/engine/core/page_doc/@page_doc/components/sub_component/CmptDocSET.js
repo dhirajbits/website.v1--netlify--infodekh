@@ -12,7 +12,7 @@ export class CmptDocSET {
    }
 
    removeCmptDoc({cmptDoc}) {
-      if (!cmptDoc.refId in this.refIdToCmptDoc) return;
+      if (!(cmptDoc.refId in this.refIdToCmptDoc)) return;
       delete this.refIdToCmptDoc[cmptDoc.refId];
    }
 
